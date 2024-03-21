@@ -62,13 +62,11 @@ function formatForecast() {
   const forecast = createForecast();
   let asciiArt = '';
 
-  if (forecast.includes('clear')) {
-    asciiArt = createAsciiArt('clear');
-  } else if (forecast.includes('showers')) {
-    asciiArt = createAsciiArt('showers');
-  } else {
-    asciiArt = createAsciiArt();
-  }
+  forecast.includes('clear')
+  ? asciiArt = createAsciiArt('clear')
+  : forecast.includes('showers')
+  ? asciiArt = createAsciiArt('showers')
+  : asciiArt = createAsciiArt()
 
   return asciiArt + forecast;
 }
