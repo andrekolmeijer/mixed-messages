@@ -20,7 +20,6 @@ function createForecast() {
       case 'windSpeed':
         forecast.push(`${db[key][index]}.\n`)
         break;
-
       default:
         break;
     }
@@ -29,7 +28,7 @@ function createForecast() {
   return forecast.join(' ');
 }
 
-function formatForecast() {
+function createAsciiArt(condition) {
 
   /*
    '   __________  ______   _       __           __  __             '
@@ -40,7 +39,36 @@ function formatForecast() {
   */
 
   const asciiArt = `\n   __________  ______   _       __           __  __             \n  / ____/ __ \\/_  __/  | |     / /__  ____ _/ /_/ /_  ___  _____\n / / __/ /_/ / / /     | | /| / / _ \\/ __ \`/ __/ __ \\/ _ \\/ ___/\n/ /_/ / ____/ / /      | |/ |/ /  __/ /_/ / /_/ / / /  __/ /    \n\\____/_/     /_/       |__/|__/\\___/\\__,_/\\__/_/ /_/\\___/_/     \n\n`;
+  const green = '\x1b[32m', yellow = '\x1b[33m', blue = '\x1b[34m';
+  const resetColor = '\x1b[0m'
+  let selectedColor = '';
+
+  switch (condition) {
+    case 'clear':
+      selectedColor = yellow;
+      break;
+    case 'showers':
+      selectedColor = blue;
+      break;
+    default:
+      selectedColor = green;
+      break;
+  }
+
+  return selectedColor + asciiArt + resetColor;
+}
+
+function formatForecast() {
   const forecast = createForecast();
+  let asciiArt = '';
+
+  if (forecast.includes('clear')) {
+    asciiArt = createAsciiArt('clear');
+  } else if (forecast.includes('showers')) {
+    asciiArt = createAsciiArt('showers');
+  } else {
+    asciiArt = createAsciiArt();
+  }
 
   return asciiArt + forecast;
 }
