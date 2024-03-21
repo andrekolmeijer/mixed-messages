@@ -18,7 +18,7 @@ function createForecast() {
         forecast.push(`The temperature is ${db[key][index]} and`)
         break;
       case 'windSpeed':
-        forecast.push(`${db[key][index]}.`)
+        forecast.push(`${db[key][index]}.\n`)
         break;
 
       default:
@@ -29,4 +29,20 @@ function createForecast() {
   return forecast.join(' ');
 }
 
-console.log(createForecast())
+function formatForecast() {
+
+  /*
+   '   __________  ______   _       __           __  __             '
+   '  / ____/ __ \/_  __/  | |     / /__  ____ _/ /_/ /_  ___  _____'
+   ' / / __/ /_/ / / /     | | /| / / _ \/ __ `/ __/ __ \/ _ \/ ___/'
+   '/ /_/ / ____/ / /      | |/ |/ /  __/ /_/ / /_/ / / /  __/ /    '
+   '\____/_/     /_/       |__/|__/\___/\__,_/\__/_/ /_/\___/_/     '
+  */
+
+  const asciiArt = `\n   __________  ______   _       __           __  __             \n  / ____/ __ \\/_  __/  | |     / /__  ____ _/ /_/ /_  ___  _____\n / / __/ /_/ / / /     | | /| / / _ \\/ __ \`/ __/ __ \\/ _ \\/ ___/\n/ /_/ / ____/ / /      | |/ |/ /  __/ /_/ / /_/ / / /  __/ /    \n\\____/_/     /_/       |__/|__/\\___/\\__,_/\\__/_/ /_/\\___/_/     \n\n`;
+  const forecast = createForecast();
+
+  return asciiArt + forecast;
+}
+
+console.log(formatForecast())
