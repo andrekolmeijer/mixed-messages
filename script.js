@@ -4,6 +4,26 @@ const db = {
   windSpeed: ['5 km/h winds with light breezes', '10 km/h winds with occasional gusts', '15 km/h winds with moderate breezes', '20 km/h winds with strong gusts', '25 km/h winds with sustained breezes']
 };
 
+function wrapText(text, maxWidth) {
+  const words = text.split(' ');
+  const lines = [];
+  let currentLine = '';
+
+  for (let word of words) {
+    if ((currentLine + word).length > maxWidth) {
+      lines.push(currentLine.trim());
+      currentLine = '';
+    }
+    currentLine += word + ' ';
+  }
+
+  if (currentLine.trim() !== '') {
+    lines.push(currentLine.trim());
+  }
+
+  return lines.join('\n');
+}
+
 function createForecast() {
   const forecast = [];
 
@@ -18,7 +38,7 @@ function createForecast() {
         forecast.push(`The temperature is ${db[key][index]} and`)
         break;
       case 'windSpeed':
-        forecast.push(`${db[key][index]}.\n`)
+        forecast.push(`${db[key][index]}.`)
         break;
       default:
         break;
@@ -40,7 +60,7 @@ function createAsciiArt(condition) {
 
   const asciiArt = `\n   __________  ______   _       __           __  __             \n  / ____/ __ \\/_  __/  | |     / /__  ____ _/ /_/ /_  ___  _____\n / / __/ /_/ / / /     | | /| / / _ \\/ __ \`/ __/ __ \\/ _ \\/ ___/\n/ /_/ / ____/ / /      | |/ |/ /  __/ /_/ / /_/ / / /  __/ /    \n\\____/_/     /_/       |__/|__/\\___/\\__,_/\\__/_/ /_/\\___/_/     \n\n`;
   const green = '\x1b[32m', yellow = '\x1b[33m', blue = '\x1b[34m';
-  const resetColor = '\x1b[0m'
+  const resetColor = '\x1b[0m';
   let selectedColor = '';
 
   switch (condition) {
@@ -68,7 +88,9 @@ function formatForecast() {
   ? asciiArt = createAsciiArt('showers')
   : asciiArt = createAsciiArt()
 
-  return asciiArt + forecast;
+  const wrappedForecast = wrapText(forecast, 85);
+
+  return asciiArt + wrappedForecast + '\n';
 }
 
 console.log(formatForecast())
