@@ -12,7 +12,7 @@ function createAsciiArt(condition) {
   */
 
   const asciiArt = `\n   __________  ______   _       __           __  __             \n  / ____/ __ \\/_  __/  | |     / /__  ____ _/ /_/ /_  ___  _____\n / / __/ /_/ / / /     | | /| / / _ \\/ __ \`/ __/ __ \\/ _ \\/ ___/\n/ /_/ / ____/ / /      | |/ |/ /  __/ /_/ / /_/ / / /  __/ /    \n\\____/_/     /_/       |__/|__/\\___/\\__,_/\\__/_/ /_/\\___/_/     \n\n`;
-  const green = '#00FF00', yellow = '#FFFF00', blue = '#0000FF';
+  const green = '#6A9955', yellow = '#D7BA7D', blue = '#569CD6';
   let selectedColor = '';
 
   switch (condition) {
