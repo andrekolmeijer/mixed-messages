@@ -1,4 +1,5 @@
 import { wrapText, createForecast } from "./shared.js";
+import { createElementHelper } from "./helpers.js";
 
 function createAsciiArt(condition) {
 
@@ -12,7 +13,6 @@ function createAsciiArt(condition) {
 
   const asciiArt = `\n   __________  ______   _       __           __  __             \n  / ____/ __ \\/_  __/  | |     / /__  ____ _/ /_/ /_  ___  _____\n / / __/ /_/ / / /     | | /| / / _ \\/ __ \`/ __/ __ \\/ _ \\/ ___/\n/ /_/ / ____/ / /      | |/ |/ /  __/ /_/ / /_/ / / /  __/ /    \n\\____/_/     /_/       |__/|__/\\___/\\__,_/\\__/_/ /_/\\___/_/     \n\n`;
   const green = '#00FF00', yellow = '#FFFF00', blue = '#0000FF';
-  // const resetColor = '\x1b[0m';
   let selectedColor = '';
 
   switch (condition) {
@@ -27,22 +27,30 @@ function createAsciiArt(condition) {
       break;
   }
 
-  // return selectedColor + asciiArt + resetColor;
-  return asciiArt;
+  const preEl = createElementHelper('pre', asciiArt, 'style', `color: ${selectedColor}`)
+  document.querySelector('main').appendChild(preEl);
 }
 
 function formatForecast() {
   const forecast = createForecast();
   const wrappedForecast = wrapText(forecast, 85);
-  let asciiArt = '';
 
   forecast.includes('clear')
-  ? asciiArt = createAsciiArt('clear')
+  ? createAsciiArt('clear')
   : forecast.includes('showers')
-  ? asciiArt = createAsciiArt('showers')
-  : asciiArt = createAsciiArt()
+  ? createAsciiArt('showers')
+  : createAsciiArt()
 
-  document.getElementById('cmd').innerText = asciiArt + wrappedForecast + '\n';
+  const preEl = createElementHelper('pre', wrappedForecast + '\n\n')
+  document.querySelector('main').appendChild(preEl);
 }
 
-formatForecast()
+function formatDocument() {
+  const mainEl = createElementHelper('main');
+  document.body.insertBefore(mainEl, document.body.firstChild);
+  mainEl.style.padding = '9px';
+
+  formatForecast()
+}
+
+formatDocument()
