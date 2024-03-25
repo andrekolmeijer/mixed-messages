@@ -17,7 +17,7 @@ export function applyStyles() {
   hEl.style.lineHeight = '36px';
   hEl.style.fontWeight = '700';
 
-  const divEl = document.querySelector('div');
+  const divEl = document.getElementById('console');
   divEl.style.margin = '0 auto';
   divEl.style.padding = '9px';
   divEl.style.color = '#C5C5C5';

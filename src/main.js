@@ -29,7 +29,7 @@ function createAsciiArt(condition) {
   }
 
   const preEl = createElementHelper('pre', asciiArt, 'style', `color: ${selectedColor}`)
-  document.querySelector('div').appendChild(preEl);
+  document.getElementById('console').appendChild(preEl);
 }
 
 function formatForecast() {
@@ -43,16 +43,16 @@ function formatForecast() {
   : createAsciiArt()
 
   const preEl = createElementHelper('pre', wrappedForecast + '\n\n')
-  document.querySelector('div').appendChild(preEl);
+  document.getElementById('console').appendChild(preEl);
 }
 
 function formatDocument() {
   const mainEl = createElementHelper('main');
   const sectionEl = createElementHelper('section');
   const hEl = createElementHelper('h1', 'Mixed Messages');
-  const divEl = createElementHelper('div');
+  const divEl = createElementHelper('div', '', 'id', 'console');
 
-  document.body.insertBefore(mainEl, document.body.firstChild);
+  document.getElementById('app').appendChild(mainEl);
   document.querySelector('main').appendChild(sectionEl);
   document.querySelector('section').appendChild(hEl);
   document.querySelector('section').appendChild(divEl);
