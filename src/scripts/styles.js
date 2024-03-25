@@ -1,4 +1,33 @@
+async function loadFonts() {
+  const robotoRegular = new FontFace('Roboto', 'url(src/assets/fonts/Roboto-Regular.woff2) format(woff2)', {
+    weight: 400,
+    style: 'normal',
+    display: 'swap'
+  });
+  const robotoBold = new FontFace('Roboto', 'url(src/assets/fonts/Roboto-Bold.woff2) format(woff2)', {
+    weight: 700,
+    style: 'normal',
+    display: 'swap'
+  });
+  const monoLisaRegular = new FontFace('MonoLisa', 'url(src/assets/fonts/MonoLisa-Regular.woff2) format(woff2)', {
+    weight: 400,
+    style: 'normal',
+    display: 'swap'
+  });
+
+  await robotoRegular.load();
+  await robotoBold.load();
+  await monoLisaRegular.load();
+
+  document.fonts.add(robotoRegular);
+  document.fonts.add(robotoBold);
+  document.fonts.add(monoLisaRegular);
+}
+
 export function applyStyles() {
+
+  loadFonts()
+
   const allEl = document.querySelectorAll('*');
   allEl.forEach((el) => {
     el.style.boxSizing = 'border-box';
