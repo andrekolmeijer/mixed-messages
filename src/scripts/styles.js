@@ -28,13 +28,17 @@ export function applyStyles() {
 
   loadFonts()
 
-  const allEl = document.querySelectorAll('*');
-  allEl.forEach((el) => {
-    el.style.boxSizing = 'border-box';
-    el.style.margin = '0';
-    el.style.padding = '0';
-    el.style.minWidth = '0';
-  });
+  const styleSheet = new CSSStyleSheet();
+  const cssRules = `
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      min-width: 0;
+    }
+  `;
+  styleSheet.insertRule(cssRules);
+  document.adoptedStyleSheets = [styleSheet];
 
   const htmlEl = document.querySelector('html');
   htmlEl.style.fontFamily = '"Roboto", sans-serif';
