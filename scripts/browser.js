@@ -28,7 +28,7 @@ function createAsciiArt(condition) {
   }
 
   const preEl = createElementHelper('pre', asciiArt, 'style', `color: ${selectedColor}`)
-  document.querySelector('main').appendChild(preEl);
+  document.querySelector('div').appendChild(preEl);
 }
 
 function formatForecast() {
@@ -42,13 +42,33 @@ function formatForecast() {
   : createAsciiArt()
 
   const preEl = createElementHelper('pre', wrappedForecast + '\n\n')
-  document.querySelector('main').appendChild(preEl);
+  document.querySelector('div').appendChild(preEl);
 }
 
 function formatDocument() {
   const mainEl = createElementHelper('main');
   document.body.insertBefore(mainEl, document.body.firstChild);
-  mainEl.style.padding = '9px';
+
+  const sectionEl = createElementHelper('section');
+  document.querySelector('main').appendChild(sectionEl);
+
+  const hEl = createElementHelper('h1', 'Mixed Messages');
+  document.querySelector('section').appendChild(hEl);
+  hEl.style.textAlign = 'center';
+  hEl.style.padding = '25px';
+  hEl.style.fontSize = '30px';
+  hEl.style.lineHeight = '36px';
+
+  const divEl = createElementHelper('div');
+  document.querySelector('section').appendChild(divEl);
+  divEl.style.margin = '0 auto';
+  divEl.style.padding = '9px';
+  divEl.style.color = '#C5C5C5';
+  divEl.style.backgroundColor = '#1E1E1E';
+  divEl.style.width = '1035px';
+  divEl.style.height = '635px'
+  divEl.style.borderRadius = '10px';
+  divEl.style.boxShadow = '0 25px 50px -12px rgb(0 0 0 / 0.25)';
 
   formatForecast()
 }
