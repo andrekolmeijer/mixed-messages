@@ -54,13 +54,29 @@ function formatDocument() {
 
   const hEl = createElementHelper('h1', 'Mixed Messages');
   document.querySelector('section').appendChild(hEl);
+
+  const divEl = createElementHelper('div');
+  document.querySelector('section').appendChild(divEl);
+
+  formatForecast()
+
+  const allEl = document.querySelectorAll('*');
+  allEl.forEach((el) => {
+    el.style.boxSizing = 'border-box';
+    el.style.margin = '0';
+    el.style.padding = '0';
+    el.style.minWidth = '0';
+  });
+
+  const htmlEl = document.querySelector('html');
+  htmlEl.style.fontFamily = '"Roboto", sans-serif';
+
   hEl.style.textAlign = 'center';
   hEl.style.padding = '25px';
   hEl.style.fontSize = '30px';
   hEl.style.lineHeight = '36px';
+  hEl.style.fontWeight = '700';
 
-  const divEl = createElementHelper('div');
-  document.querySelector('section').appendChild(divEl);
   divEl.style.margin = '0 auto';
   divEl.style.padding = '9px';
   divEl.style.color = '#C5C5C5';
@@ -70,7 +86,11 @@ function formatDocument() {
   divEl.style.borderRadius = '10px';
   divEl.style.boxShadow = '0 25px 50px -12px rgb(0 0 0 / 0.25)';
 
-  formatForecast()
+  const preEls = document.querySelectorAll('pre');
+  preEls.forEach(preEl => {
+    preEl.style.fontFamily = '"MonoLisa", sans-serif';
+    preEl.style.fontSize = '12px'
+  });
 }
 
 formatDocument()
