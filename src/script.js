@@ -1,4 +1,4 @@
-import { wrapText, createForecast } from "./shared.js";
+import { wrapText, createForecast } from "./scripts/shared.js";
 
 function createAsciiArt(condition) {
 
