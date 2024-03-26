@@ -42,6 +42,12 @@ export function applyStyles() {
 
   const htmlEl = document.querySelector('html');
   htmlEl.style.fontFamily = '"Roboto", sans-serif';
+  htmlEl.style.color = '#fff';
+
+  const mainEl = document.querySelector('main');
+  mainEl.style.minHeight = '100vh';
+  mainEl.style.backgroundColor = '#0e121c';
+  mainEl.style.backgroundImage = 'url(src/assets/img/hexagon-grid.svg)';
 
   const hEl = document.querySelector('h1');
   hEl.style.textAlign = 'center';
@@ -53,7 +59,7 @@ export function applyStyles() {
   const divEl = document.getElementById('console');
   divEl.style.margin = '0 auto';
   divEl.style.padding = '9px';
-  divEl.style.color = '#C5C5C5';
+  divEl.style.color = '#D4D4D4';
   divEl.style.backgroundColor = '#1E1E1E';
   divEl.style.width = '1035px';
   divEl.style.height = '635px'
