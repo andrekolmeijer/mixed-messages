@@ -1,5 +1,5 @@
-import { wrapText, createForecast } from "./scripts/shared.js";
-import { createElementHelper } from "./scripts/helpers.js";
+import { wrapText, createForecast } from "./scripts/sharedFunctions.js";
+import { createElementHelper } from "./scripts/helperFunctions.js";
 import { applyStyles } from "./scripts/styles.js";
 
 function createAsciiArt(condition) {
