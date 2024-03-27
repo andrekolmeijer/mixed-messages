@@ -2,8 +2,5 @@
   "type": "module",
   "scripts": {
     "console": "node src/scripts/console.js"
-  },
-  "devDependencies": {
-    "woff2": "^1.0.0"
   }
 }
