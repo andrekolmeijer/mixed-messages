@@ -1,7 +1,8 @@
 {
   "type": "module",
   "scripts": {
-    "console": "node src/scripts/console.js"
+    "console": "node src/scripts/console.js",
+    "convert": "node src/scripts/convert.js"
   },
   "dependencies": {
     "ttf2woff2": "^5.0.0"
