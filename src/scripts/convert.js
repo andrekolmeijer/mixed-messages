@@ -1,13 +1,13 @@
-const { readFileSync, writeFileSync } = require('fs');
-const { compress } = require('wawoff2');
+import { readFileSync, writeFileSync } from 'node:fs';
+import { compress } from 'wawoff2';
 
 const inputFile = 'src/assets/fonts/ttf/OpenSans-VariableFont_wdth,wght.ttf';
-const outputFile = 'src/assets/fonts/OpenSans-VariableFont-Test.woff2';
+const outputFile = 'src/assets/fonts/OpenSans-VariableFont.woff2';
 
 const input = readFileSync(inputFile);
 const output = outputFile;
 
-async function compressAndWrite() {
+async function convert() {
   const startTime = new Date();
 
   const out = await compress(input);
@@ -18,4 +18,4 @@ async function compressAndWrite() {
   console.log(`Completed in ${elapsedTime} sec.`);
 }
 
-compressAndWrite();
+convert();
