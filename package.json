@@ -3,5 +3,8 @@
   "scripts": {
     "console": "node src/scripts/console.js",
     "convert": "node src/scripts/convert.js"
+  },
+  "dependencies": {
+    "wawoff2": "^2.0.1"
   }
 }
