@@ -1,27 +1,20 @@
 async function loadFonts() {
-  const robotoRegular = new FontFace('Roboto', 'url(src/assets/fonts/Roboto-Regular.woff2) format(woff2)', {
+  const plexMono = new FontFace('IBM Plex Mono', 'url(src/assets/fonts/IBMPlexMono-Regular.woff2) format(woff2)', {
     weight: 400,
     style: 'normal',
     display: 'swap'
   });
-  const robotoBold = new FontFace('Roboto', 'url(src/assets/fonts/Roboto-Bold.woff2) format(woff2)', {
-    weight: 700,
-    style: 'normal',
-    display: 'swap'
-  });
-  const monoLisaRegular = new FontFace('MonoLisa', 'url(src/assets/fonts/MonoLisa-Regular.woff2) format(woff2)', {
-    weight: 400,
+  const openSans = new FontFace('OpenSans', 'url(src/assets/fonts/OpenSans-VariableFont.woff2) format("woff2-variations")', {
+    weight: '300 800',
     style: 'normal',
     display: 'swap'
   });
 
-  await robotoRegular.load();
-  await robotoBold.load();
-  await monoLisaRegular.load();
+  await plexMono.load();
+  await openSans.load();
 
-  document.fonts.add(robotoRegular);
-  document.fonts.add(robotoBold);
-  document.fonts.add(monoLisaRegular);
+  document.fonts.add(openSans);
+  document.fonts.add(plexMono);
 }
 
 export function applyStyles() {
@@ -41,7 +34,8 @@ export function applyStyles() {
   document.adoptedStyleSheets = [styleSheet];
 
   const htmlEl = document.querySelector('html');
-  htmlEl.style.fontFamily = '"Roboto", sans-serif';
+  htmlEl.style.fontFamily = '"OpenSans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"';
+  htmlEl.style.fontOpticalSizing = 'auto';
   htmlEl.style.color = '#fff';
 
   const mainEl = document.querySelector('main');
@@ -54,7 +48,7 @@ export function applyStyles() {
   hEl.style.padding = '25px';
   hEl.style.fontSize = '30px';
   hEl.style.lineHeight = '36px';
-  hEl.style.fontWeight = '700';
+  hEl.style.fontWeight = '600';
 
   const divEl = document.getElementById('console');
   divEl.style.margin = '0 auto';
@@ -68,7 +62,7 @@ export function applyStyles() {
 
   const preEls = document.querySelectorAll('pre');
   preEls.forEach(preEl => {
-    preEl.style.fontFamily = '"MonoLisa", sans-serif';
+    preEl.style.fontFamily = '"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
     preEl.style.fontSize = '12px'
   });
 }
