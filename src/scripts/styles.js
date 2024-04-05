@@ -89,7 +89,6 @@ export function applyStyles() {
   html.style.fontFeatureSettings = 'normal';
   html.style.fontVariationSettings = 'normal';
   html.style.webkitTapHighlightColor = 'transparent';
-  html.style.backgroundColor = '#0e121c';
 
   const body = document.querySelector('body');
   body.style.scrollBehavior = 'smooth';
