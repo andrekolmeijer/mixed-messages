@@ -1,68 +1,510 @@
 async function loadFonts() {
-  const plexMono = new FontFace('IBM Plex Mono', 'url(src/assets/fonts/IBMPlexMono-Regular.woff2) format(woff2)', {
+  const plexMonoRegular = new FontFace('IBM Plex Mono', 'url(src/assets/fonts/IBMPlexMono-Regular.woff2) format(woff2)', {
     weight: 400,
     style: 'normal',
     display: 'swap'
   });
-  const openSans = new FontFace('OpenSans', 'url(src/assets/fonts/OpenSans-VariableFont.woff2) format("woff2-variations")', {
+  const plexMonoSemiBold = new FontFace('IBM Plex Mono', 'url(src/assets/fonts/IBMPlexMono-SemiBold.woff2) format(woff2)', {
+    weight: 600,
+    style: 'normal',
+    display: 'swap'
+  });
+  const openSansVariable = new FontFace('Open Sans', 'url(src/assets/fonts/OpenSans-VariableFont.woff2) format("woff2-variations")', {
     weight: '300 800',
     style: 'normal',
     display: 'swap'
   });
 
-  await plexMono.load();
-  await openSans.load();
+  await plexMonoRegular.load();
+  await plexMonoSemiBold.load();
+  await openSansVariable.load();
 
-  document.fonts.add(openSans);
-  document.fonts.add(plexMono);
+  document.fonts.add(plexMonoRegular);
+  document.fonts.add(plexMonoSemiBold);
+  document.fonts.add(openSansVariable);
 }
 
 export function applyStyles() {
 
   loadFonts()
 
+  const cssReset = new CSSStyleSheet();
   const styleSheet = new CSSStyleSheet();
-  const cssRules = `
-    * {
+
+  const all = `
+    *, :after, :before {
+      -webkit-font-smoothing: auto;
+      -moz-osx-font-smoothing: auto;
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+      border: 0 solid;
       min-width: 0;
+      padding: 0;
+      margin: 0;
     }
   `;
-  styleSheet.insertRule(cssRules);
-  document.adoptedStyleSheets = [styleSheet];
+  const media = `
+    audio, canvas, embed, iframe, img, object, svg, video {
+      display: block;
+      vertical-align: middle;
+    }
+  `;
+  const strong = `
+    b, strong {
+      font-weight: 700;
+    }
+  `;
+  const anchor = `
+    a {
+      text-decoration: inherit;
+      color: #84BA64;
+    }
+  `;
+  const list = `
+    ul, ol {
+      list-style: none;
+    }
+  `;
+  cssReset.insertRule(all);
+  cssReset.insertRule(media);
+  cssReset.insertRule(strong);
+  cssReset.insertRule(anchor);
+  cssReset.insertRule(list);
 
-  const htmlEl = document.querySelector('html');
-  htmlEl.style.fontFamily = '"OpenSans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"';
-  htmlEl.style.fontOpticalSizing = 'auto';
-  htmlEl.style.color = '#fff';
+  const htmlBody = `
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+  `;
 
-  const mainEl = document.querySelector('main');
-  mainEl.style.minHeight = '100vh';
-  mainEl.style.backgroundColor = '#0e121c';
-  mainEl.style.backgroundImage = 'url(src/assets/img/hexagon-grid.svg)';
+  styleSheet.insertRule(htmlBody);
 
-  const hEl = document.querySelector('h1');
-  hEl.style.textAlign = 'center';
-  hEl.style.padding = '25px';
-  hEl.style.fontSize = '30px';
-  hEl.style.lineHeight = '36px';
-  hEl.style.fontWeight = '600';
+  const html = document.querySelector('html');
+  html.style.colorScheme = 'dark';
+  html.style.lineHeight = '1.5';
+  html.style.textSizeAdjust = '100%';
+  html.style.tabSize = '4';
+  html.style.fontFamily = 'ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"';
+  html.style.fontOpticalSizing = 'auto';
+  html.style.fontFeatureSettings = 'normal';
+  html.style.fontVariationSettings = 'normal';
+  html.style.webkitTapHighlightColor = 'transparent';
 
-  const divEl = document.getElementById('console');
-  divEl.style.margin = '0 auto';
-  divEl.style.padding = '9px';
-  divEl.style.color = '#D4D4D4';
-  divEl.style.backgroundColor = '#1E1E1E';
-  divEl.style.width = '1035px';
-  divEl.style.height = '635px'
-  divEl.style.borderRadius = '10px';
-  divEl.style.boxShadow = '0 25px 50px -12px rgb(0 0 0 / 0.25)';
+  const body = document.querySelector('body');
+  body.style.scrollBehavior = 'smooth';
+  body.style.backgroundColor = '#0e121c';
+  body.style.fontFamily = 'Open Sans';
+  body.style.color = '#fff';
 
-  const preEls = document.querySelectorAll('pre');
-  preEls.forEach(preEl => {
-    preEl.style.fontFamily = '"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
-    preEl.style.fontSize = '12px'
+  const app = document.getElementById('app');
+  app.style.display = 'grid';
+  app.style.width = '100%';
+  app.style.height = '100%';
+  app.style.gridTemplateColumns = '1fr';
+  app.style.gridTemplateRows = 'auto 1fr auto';
+
+  const nav = document.querySelector('header').querySelector('nav');
+  nav.style.display = 'flex';
+  nav.style.height = '4rem';
+  nav.style.flexDirection = 'row';
+  nav.style.alignItems = 'center';
+  nav.style.gap = '2rem';
+  nav.style.borderBottom = '1px solid rgb(44 52 55 / 1)';
+  nav.style.padding = '0 2rem';
+  nav.style.backgroundColor = '#0D121C';
+
+  const div = document.getElementById('div');
+  div.style.display = 'flex';
+  div.style.height = '100%';
+  div.style.alignItems = 'center';
+  div.style.border = '0 solid rgb(44 52 55 / 1';
+  div.style.padding = '0';
+  div.style.flexShrink = '0';
+  div.style.fontFamily = 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
+
+  const a = document.getElementById('div').querySelector('a');
+  a.style.flex = '1 1 0%';
+  a.style.fontFamily = 'IBM Plex Mono';
+  a.style.fontWeight = '600';
+  a.style.color = '#E9EDF0';
+  a.style.fontSize = '1.125rem';
+  a.style.lineHeight = '1.75rem';
+
+  const span = document.getElementById('div').querySelector('span');
+  span.style.color = '#84BA64'; // #84BA64 / #638B4B
+
+  const div2 = document.getElementById('div2');
+  div2.style.display = 'flex';
+  div2.style.flexDirection = 'row';
+  div2.style.alignItems = 'center';
+  div2.style.flex = '1 1 0%';
+
+  const ul = document.querySelector('ul');
+  ul.style.display = 'flex';
+  ul.style.flex = '1 1 0%';
+  ul.style.flexDirection = 'row';
+
+  const lis = document.querySelector('ul').querySelectorAll('li');
+  lis.forEach(li => {
+    li.style.display = 'none'; // flex
+    li.style.alignItems = 'center';
+  })
+
+  const as = document.querySelector('ul').querySelectorAll('a');
+  as.forEach(a => {
+    a.style.display = 'inline-flex';
+    a.style.alignItems = 'center';
+    a.style.gap = '.5rem';
+    a.style.borderRadius = '.25rem';
+    a.style.padding = '.5rem .75rem';
   });
+
+  const spans = document.querySelector('ul').querySelectorAll('span');
+  spans.forEach(span => {
+    span.style.fontSize = '.875rem';
+    span.style.fontWeight = '500';
+    span.style.lineHeight = '1.25rem';
+    span.style.color = '#fff';
+  });
+
+  const svgs = document.querySelector('ul').querySelectorAll('svg');
+  svgs.forEach(svg => {
+    svg.style.width = '.875rem';
+    svg.style.height = '.875rem';
+    svg.style.color = 'rgb(233 237 240 / 1)';
+  });
+
+  const ul2 = document.getElementById('ul2');
+  ul2.style.display = 'flex';
+  ul2.style.alignItems = 'center';
+  ul2.style.gap = '.5rem';
+
+  const lis2 = document.getElementById('ul2').querySelectorAll('li');
+  lis2.forEach(li => {
+    li.style.display = 'flex';
+    li.style.alignItems = 'center';
+  })
+
+  const as2 = document.getElementById('ul2').querySelectorAll('a');
+  as2.forEach(a => {
+    a.style.width = '2.25rem';
+    a.style.height = '2.25rem';
+    a.style.borderRadius = '.375rem';
+    a.style.padding = '.5rem';
+  });
+
+  const svgs2 = document.getElementById('ul2').querySelectorAll('svg');
+  svgs2.forEach(svg => {
+    svg.style.width = '20px';
+    svg.style.height = '20px';
+    svg.style.color = '#d9e1e4'; // fill
+  });
+
+  const container = document.getElementById('container');
+  container.style.display = 'flex';
+  container.style.width = '100%';
+  container.style.alignItems = 'center';
+  container.style.justifyContent = 'center';
+  container.style.padding = '3.5rem 7rem';
+
+  const backdrop = document.getElementById('backdrop');
+  backdrop.style.position = 'absolute';
+  backdrop.style.left = '0';
+  backdrop.style.top = '0';
+  backdrop.style.zIndex = '-10';
+  backdrop.style.width = '100%';
+  backdrop.style.height = '100%';
+  backdrop.style.backgroundImage = 'url(src/assets/img/hexagon-grid.svg)';
+  backdrop.style.backgroundPosition = '50%';
+  backdrop.style.backgroundRepeat = 'no-repeat';
+  // backdrop.style.opacity = '1';
+
+  const backdropAfter = `
+    #backdrop:after {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      aspect-ratio: 1/1;
+      width: 300px;
+      border-radius: 9999px;
+      background-color: rgb(44 104 44 / 1);
+      filter: blur(120px);
+      content: "";
+    }
+  `;
+
+  styleSheet.insertRule(backdropAfter);
+
+  const main = document.querySelector('main');
+  main.style.display = 'flex';
+  main.style.width = '100%';
+  main.style.flexDirection = 'row';
+  main.style.gap = '8rem';
+
+  const section = document.getElementById('section-one');
+  section.style.display = 'flex';
+  section.style.maxWidth = '500px';
+  section.style.flex = '1 0';
+  section.style.flexDirection = 'column';
+  section.style.justifyContent = 'center';
+  section.style.gap = '2rem';
+
+  const div3 = document.getElementById('div3');
+  div3.style.display = 'flex';
+  div3.style.maxWidth = '400px';
+  div3.style.flexDirection = 'column';
+  div3.style.gap = '1rem';
+
+  const heading = document.querySelector('h1');
+  heading.style.backgroundImage = 'linear-gradient(180deg, #fff, hsla(0,0%,100%,.8))';
+  heading.style.backgroundClip = 'text';
+  heading.style.fontWeight = '600';
+  heading.style.fontSize = '3rem';
+  heading.style.lineHeight = '4rem';
+  heading.style.letterSpacing = '-.06rem';
+  heading.style.webkitTextFillColor = 'transparent';
+
+  const paragraph = document.querySelector('p');
+  paragraph.style.fontSize = '1.125rem';
+  paragraph.style.lineHeight = '1.75rem';
+
+  const div4 = document.getElementById('div4');
+  div4.style.display = 'flex';
+  div4.style.maxWidth = '400px';
+  div4.style.flexDirection = 'column';
+  div4.style.gap = '1rem';
+
+  const button = document.getElementById('button');
+  button.style.color = '#fff';
+  button.style.cursor = 'pointer';
+  button.style.position = 'relative';
+  button.style.display = 'inline-flex';
+  button.style.alignItems = 'center';
+  button.style.justifyContent = 'center';
+  button.style.gap = '.5rem';
+  button.style.padding = '.625rem 1.125rem';
+  button.style.fontWeight = '600';
+  button.style.borderRadius = '.5rem';
+  button.style.borderWidth = '1px';
+  button.style.borderColor = 'rgba(65,126,56,.3)';
+  button.style.backgroundColor = 'rgba(65,126,56,.1)';
+  button.style.boxShadow = '0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgba(0,0,0,.05)';
+
+  const buttonBefore = `
+    #button:before {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      z-index: -10;
+      margin-left: auto;
+      margin-right: auto;
+      height: 100%;
+      width: 100%;
+      background-image: radial-gradient(8em circle at 50% 10px,#5fa04e,transparent 30%);
+      opacity: .3;
+      content: "";
+    }
+  `;
+  const buttonAfter = `
+    #button:after {
+      position: absolute;
+      top: -1px;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      height: 1px;
+      width: 40%;
+      background-image: linear-gradient(to right, rgba(65,126,56,0), #417e38, rgba(65,126,56,0));
+      // background-image: linear-gradient(to right,var(--tw-gradient-stops));
+      // --tw-gradient-from: rgba(65,126,56,0) var(--tw-gradient-from-position);
+      // --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to);
+      // --tw-gradient-stops: var(--tw-gradient-from),#417e38 var(--tw-gradient-via-position),var(--tw-gradient-to);
+      // --tw-gradient-to: rgba(65,126,56,0) var(--tw-gradient-to-position);
+      content: "";
+    }
+  `;
+
+  styleSheet.insertRule(buttonBefore);
+  styleSheet.insertRule(buttonAfter);
+
+  const svg = document.getElementById('button').querySelector('svg');
+  svg.style.width = '1.25rem';
+  svg.style.height = '1.25rem';
+  svg.style.opacity = '.5';
+
+  const smalls = document.querySelectorAll('small');
+  smalls.forEach(small => {
+    small.style.textAlign = 'center';
+    small.style.fontSize = '.875rem';
+    small.style.lineHeight = '1.25rem';
+    small.style.color = '#CBD4D9';
+  });
+
+  const section2 = document.getElementById('section-two');
+  section2.style.display = 'flex';
+  section2.style.maxWidth = '48rem';
+  section2.style.flex = '1 1';
+  section2.style.flexDirection = 'column';
+  section2.style.alignItems = 'center';
+  section2.style.justifyContent = 'center';
+  section2.style.gap = '1rem';
+
+  const div5 = document.getElementById('div5');
+  div5.style.width = '100%';
+  div5.style.maxWidth = '100%';
+  div5.style.minHeight = '25rem';
+
+  const console = document.getElementById('console');
+  console.style.display = 'flex';
+  console.style.borderTopLeftRadius = '.25rem';
+  console.style.borderTopRightRadius = '.25rem';
+  console.style.borderLeftWidth = '1px';
+  console.style.borderRightWidth = '1px';
+  console.style.borderTopWidth = '1px';
+  console.style.borderColor = 'rgb(44 52 55 / 1)';
+  console.style.backgroundColor = 'rgb(13 18 28 / 1)';
+  console.style.padding = '.75rem 1rem';
+
+  const span2 = document.getElementById('console').querySelector('span');
+  span2.style.display = 'inline-flex';
+  span2.style.alignItems = 'center';
+  span2.style.gap = '.5rem';
+  span2.style.padding = '0 .25rem';
+  span2.style.fontSize = '.875rem';
+  span2.style.lineHeight = '1.25rem';
+  span2.style.fontWeight = '600';
+  span2.style.color = '#e9edf0';
+
+  const svg2 = document.getElementById('console').querySelector('svg');
+  svg2.style.width = '1.25rem';
+  svg2.style.height = '1.25rem';
+  svg2.style.color = '#84ba64'; // #84ba64 / #ae5f00
+
+  const console2 = document.getElementById('console2');
+  console2.style.width = '100%';
+  console2.style.height = 'calc(100% - 45px)';
+  console2.style.borderBottomLeftRadius = '.25rem';
+  console2.style.borderBottomRightRadius = '.25rem';
+  console2.style.border = '1px solid rgb(44 52 55 / 1)';
+  console2.style.backgroundColor = 'rgb(13 18 28 / 1)';
+
+  const pre = document.getElementById('pre');
+  pre.style.height = '100%';
+  pre.style.padding = '1rem';
+  pre.style.fontFamily = 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
+
+  const code = document.querySelector('code');
+  code.style.display = 'grid';
+  code.style.overflowX = 'auto';
+  code.style.alignContent = 'start';
+  code.style.fontFamily = 'IBM Plex Mono';
+  code.style.fontSize = '.875rem';
+  code.style.lineHeight = '1.15rem';
+  code.style.height = '100%';
+
+  const spans2 = document.querySelector('code').querySelectorAll('span');
+  spans2[1].style.color = '#ECEFF4'; // rgb(203 212 217 / 1) / #D8DEE9
+  spans2[1].style.lineHeight = '1.375rem';
+
+  const paragraph2 = document.getElementById('section-two').querySelector('p');
+  paragraph2.style.textAlign = 'center';
+  paragraph2.style.fontSize = '.875rem';
+  paragraph2.style.lineHeight = '1.25rem';
+  paragraph2.style.color = '#E9EDF0';
+
+  const footer = document.querySelector('footer');
+  footer.style.display = 'flex';
+  footer.style.flexDirection = 'row';
+  footer.style.justifyContent = 'space-between';
+  footer.style.alignItems = 'center';
+  footer.style.gap = '1.5rem';
+  footer.style.borderTop = '1px solid rgb(44 52 55 / 1)';
+  footer.style.backgroundColor = 'rgb(13 18 28 / 1)';
+  footer.style.padding = '1.25rem 2rem';
+
+  const ul3 = document.getElementById('ul3');
+  ul3.style.display = 'flex';
+  ul3.style.flexWrap = 'wrap';
+  ul3.style.alignContent = 'flex-start';
+  ul3.style.alignItems = 'center';
+  ul3.style.justifyContent = 'center';
+  ul3.style.gap = '.25rem';
+  ul3.style.alignSelf = 'stretch';
+
+  const as3 = document.querySelector('footer').querySelectorAll('a');
+  as3.forEach(a => {
+    a.style.display = 'inline-flex';
+    a.style.alignItems = 'center';
+    a.style.gap = '.5rem';
+    a.style.borderRadius = '.25rem';
+    a.style.padding = '.5rem .75rem';
+  });
+
+  const as4 = document.getElementById('ul3').querySelectorAll('a');
+  as4.forEach(a => {
+    a.style.whiteSpace = 'nowrap';
+  });
+
+  const spans3 = document.querySelector('footer').querySelectorAll('span');
+  spans3.forEach(span => {
+    span.style.fontSize = '.875rem';
+    span.style.fontWeight = '500';
+    span.style.lineHeight = '1.25rem';
+    span.style.color = '#fff';
+  });
+
+  const svgs3 = document.getElementById('ul3').querySelectorAll('svg');
+  svgs3.forEach(svg => {
+    svg.style.width = '.875rem';
+    svg.style.height = '.875rem';
+    svg.style.color = 'rgb(233 237 240 / 1)';
+  });
+
+  const div6 = document.getElementById('div6');
+  div6.style.display = 'flex';
+  div6.style.flexDirection = 'row';
+  div6.style.alignItems = 'center';
+  div6.style.gap = '.25rem';
+
+  const ul4 = document.getElementById('ul4');
+  ul4.style.display = 'flex';
+  ul4.style.alignItems = 'center';
+  ul4.style.gap = '.25rem';
+
+  const svgs4 = document.getElementById('ul4').querySelectorAll('svg');
+  svgs4.forEach(svg => {
+    svg.style.width = '20px';
+    svg.style.height = '20px';
+    svg.style.color = '#d9e1e4'; // fill
+  });
+
+  const aHover = `
+    #ul2 a:hover,
+    #ul3 a:hover,
+    #div6 a:hover {
+      background-color: rgb(44 52 55 / 1);
+    }
+  `;
+
+  const aHover2 = `
+    main a:hover {
+      color: #99cc7d;
+    }
+  `;
+
+  const buttonFocusHover = `
+    #button:focus,
+    #button:hover {
+      background-color: rgba(65,126,56,.2) !important;
+    }
+  `;
+
+  styleSheet.insertRule(aHover);
+  styleSheet.insertRule(aHover2);
+  styleSheet.insertRule(buttonFocusHover);
+
+  document.adoptedStyleSheets = [cssReset, styleSheet];
+
 }
