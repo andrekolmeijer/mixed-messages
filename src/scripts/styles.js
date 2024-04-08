@@ -64,6 +64,7 @@ export function applyStyles() {
       list-style: none;
     }
   `;
+
   cssReset.insertRule(all);
   cssReset.insertRule(media);
   cssReset.insertRule(strong);
@@ -110,8 +111,8 @@ export function applyStyles() {
   nav.style.alignItems = 'center';
   nav.style.gap = '2rem';
   nav.style.borderBottom = '1px solid rgb(44 52 55 / 1)';
-  nav.style.padding = '0 2rem';
   nav.style.backgroundColor = '#0D121C';
+  nav.style.padding = '0 1rem';
 
   const div = document.getElementById('div');
   div.style.display = 'flex';
@@ -141,6 +142,7 @@ export function applyStyles() {
 
   const ul = document.querySelector('ul');
   ul.style.display = 'flex';
+  ul.style.gap = '.25rem';
   ul.style.flex = '1 1 0%';
   ul.style.flexDirection = 'row';
 
@@ -205,7 +207,7 @@ export function applyStyles() {
   container.style.width = '100%';
   container.style.alignItems = 'center';
   container.style.justifyContent = 'center';
-  container.style.padding = '3.5rem 7rem';
+  container.style.padding = '3.5rem 1rem';
 
   const backdrop = document.getElementById('backdrop');
   backdrop.style.position = 'absolute';
@@ -217,7 +219,7 @@ export function applyStyles() {
   backdrop.style.backgroundImage = 'url(src/assets/img/hexagon-grid.svg)';
   backdrop.style.backgroundPosition = '50%';
   backdrop.style.backgroundRepeat = 'no-repeat';
-  // backdrop.style.opacity = '1';
+  backdrop.style.opacity = '.5';
 
   const backdropAfter = `
     #backdrop:after {
@@ -238,15 +240,21 @@ export function applyStyles() {
   const main = document.querySelector('main');
   main.style.display = 'flex';
   main.style.width = '100%';
-  main.style.flexDirection = 'row';
-  main.style.gap = '8rem';
+  main.style.flexDirection = 'column';
+  main.style.alignItems = 'center';
+  main.style.justifyContent = 'center';
+  main.style.gap = '2rem';
+
+  const as3 = document.querySelector('main').querySelectorAll('a');
+  as3.forEach(a => {
+    a.style.fontWeight = '600';
+  });
 
   const section = document.getElementById('section-one');
   section.style.display = 'flex';
   section.style.maxWidth = '500px';
   section.style.flex = '1 0';
   section.style.flexDirection = 'column';
-  section.style.justifyContent = 'center';
   section.style.gap = '2rem';
 
   const div3 = document.getElementById('div3');
@@ -259,14 +267,14 @@ export function applyStyles() {
   heading.style.backgroundImage = 'linear-gradient(180deg, #fff, hsla(0,0%,100%,.8))';
   heading.style.backgroundClip = 'text';
   heading.style.fontWeight = '600';
-  heading.style.fontSize = '3rem';
-  heading.style.lineHeight = '4rem';
-  heading.style.letterSpacing = '-.06rem';
+  heading.style.fontSize = '2.25rem';
+  heading.style.lineHeight = '3rem';
+  heading.style.letterSpacing = '-.045rem';
   heading.style.webkitTextFillColor = 'transparent';
 
   const paragraph = document.querySelector('p');
-  paragraph.style.fontSize = '1.125rem';
-  paragraph.style.lineHeight = '1.75rem';
+  paragraph.style.fontSize = '1rem';
+  paragraph.style.lineHeight = '1.5rem';
 
   const div4 = document.getElementById('div4');
   div4.style.display = 'flex';
@@ -283,12 +291,12 @@ export function applyStyles() {
   button.style.justifyContent = 'center';
   button.style.gap = '.5rem';
   button.style.padding = '.625rem 1.125rem';
-  button.style.fontWeight = '600';
+  button.style.fontWeight = '400';
   button.style.borderRadius = '.5rem';
   button.style.borderWidth = '1px';
-  button.style.borderColor = 'rgba(65,126,56,.3)';
-  button.style.backgroundColor = 'rgba(65,126,56,.1)';
-  button.style.boxShadow = '0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgba(0,0,0,.05)';
+  button.style.borderColor = 'rgba(65, 126, 56, .3)';
+  button.style.backgroundColor = 'rgba(65, 126, 56, .1)';
+  button.style.boxShadow = '0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgba(0, 0, 0, .05)';
 
   const buttonBefore = `
     #button:before {
@@ -317,11 +325,6 @@ export function applyStyles() {
       height: 1px;
       width: 40%;
       background-image: linear-gradient(to right, rgba(65,126,56,0), #417e38, rgba(65,126,56,0));
-      // background-image: linear-gradient(to right,var(--tw-gradient-stops));
-      // --tw-gradient-from: rgba(65,126,56,0) var(--tw-gradient-from-position);
-      // --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to);
-      // --tw-gradient-stops: var(--tw-gradient-from),#417e38 var(--tw-gradient-via-position),var(--tw-gradient-to);
-      // --tw-gradient-to: rgba(65,126,56,0) var(--tw-gradient-to-position);
       content: "";
     }
   `;
@@ -337,15 +340,18 @@ export function applyStyles() {
   const smalls = document.querySelectorAll('small');
   smalls.forEach(small => {
     small.style.textAlign = 'center';
-    small.style.fontSize = '.875rem';
-    small.style.lineHeight = '1.25rem';
+    small.style.fontSize = '.75rem';
+    small.style.lineHeight = '1rem';
     small.style.color = '#CBD4D9';
   });
 
+  const smallspan = document.querySelector('small').querySelector('span');
+  smallspan.style.fontWeight = '700';
+
   const section2 = document.getElementById('section-two');
-  section2.style.display = 'flex';
-  section2.style.maxWidth = '48rem';
+  section2.style.maxWidth = '28rem';
   section2.style.flex = '1 1';
+  section2.style.display = 'flex';
   section2.style.flexDirection = 'column';
   section2.style.alignItems = 'center';
   section2.style.justifyContent = 'center';
@@ -353,25 +359,26 @@ export function applyStyles() {
 
   const div5 = document.getElementById('div5');
   div5.style.width = '100%';
-  div5.style.maxWidth = '100%';
   div5.style.minHeight = '25rem';
+  div5.style.display = 'flex';
+  div5.style.flexDirection = 'column';
 
-  const console = document.getElementById('console');
-  console.style.display = 'flex';
-  console.style.borderTopLeftRadius = '.25rem';
-  console.style.borderTopRightRadius = '.25rem';
-  console.style.borderLeftWidth = '1px';
-  console.style.borderRightWidth = '1px';
-  console.style.borderTopWidth = '1px';
-  console.style.borderColor = 'rgb(44 52 55 / 1)';
-  console.style.backgroundColor = 'rgb(13 18 28 / 1)';
-  console.style.padding = '.75rem 1rem';
+  const console1 = document.getElementById('console');
+  console1.style.borderTopLeftRadius = '.25rem';
+  console1.style.borderTopRightRadius = '.25rem';
+  console1.style.borderLeftWidth = '1px';
+  console1.style.borderRightWidth = '1px';
+  console1.style.borderTopWidth = '1px';
+  console1.style.borderColor = 'rgb(44 52 55 / 1)';
+  console1.style.backgroundColor = 'rgb(13 18 28 / 1)';
+  console1.style.padding = '.75rem 1rem';
+  console1.style.flexGrow = '0';
+  console1.style.display = 'flex';
 
   const span2 = document.getElementById('console').querySelector('span');
   span2.style.display = 'inline-flex';
   span2.style.alignItems = 'center';
   span2.style.gap = '.5rem';
-  span2.style.padding = '0 .25rem';
   span2.style.fontSize = '.875rem';
   span2.style.lineHeight = '1.25rem';
   span2.style.fontWeight = '600';
@@ -384,25 +391,25 @@ export function applyStyles() {
 
   const console2 = document.getElementById('console2');
   console2.style.width = '100%';
-  console2.style.height = 'calc(100% - 45px)';
   console2.style.borderBottomLeftRadius = '.25rem';
   console2.style.borderBottomRightRadius = '.25rem';
   console2.style.border = '1px solid rgb(44 52 55 / 1)';
   console2.style.backgroundColor = 'rgb(13 18 28 / 1)';
+  console2.style.flexGrow = '1';
+  console2.style.display = 'flex';
 
   const pre = document.getElementById('pre');
-  pre.style.height = '100%';
   pre.style.padding = '1rem';
   pre.style.fontFamily = 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
+  pre.style.flexGrow = '1';
+  pre.style.display = 'flex';
 
   const code = document.querySelector('code');
-  code.style.display = 'grid';
-  code.style.overflowX = 'auto';
-  code.style.alignContent = 'start';
   code.style.fontFamily = 'IBM Plex Mono';
   code.style.fontSize = '.875rem';
   code.style.lineHeight = '1.15rem';
-  code.style.height = '100%';
+  code.style.overflowX = 'auto';
+  code.style.flexGrow = '1';
 
   const spans2 = document.querySelector('code').querySelectorAll('span');
   spans2[1].style.color = '#ECEFF4'; // rgb(203 212 217 / 1) / #D8DEE9
@@ -416,13 +423,13 @@ export function applyStyles() {
 
   const footer = document.querySelector('footer');
   footer.style.display = 'flex';
-  footer.style.flexDirection = 'row';
+  footer.style.flexDirection = 'column';
   footer.style.justifyContent = 'space-between';
   footer.style.alignItems = 'center';
   footer.style.gap = '1.5rem';
   footer.style.borderTop = '1px solid rgb(44 52 55 / 1)';
   footer.style.backgroundColor = 'rgb(13 18 28 / 1)';
-  footer.style.padding = '1.25rem 2rem';
+  footer.style.padding = '1rem 2rem';
 
   const ul3 = document.getElementById('ul3');
   ul3.style.display = 'flex';
@@ -433,17 +440,13 @@ export function applyStyles() {
   ul3.style.gap = '.25rem';
   ul3.style.alignSelf = 'stretch';
 
-  const as3 = document.querySelector('footer').querySelectorAll('a');
-  as3.forEach(a => {
+  const as4 = document.querySelector('footer').querySelectorAll('a');
+  as4.forEach(a => {
     a.style.display = 'inline-flex';
     a.style.alignItems = 'center';
     a.style.gap = '.5rem';
     a.style.borderRadius = '.25rem';
     a.style.padding = '.5rem .75rem';
-  });
-
-  const as4 = document.getElementById('ul3').querySelectorAll('a');
-  as4.forEach(a => {
     a.style.whiteSpace = 'nowrap';
   });
 
@@ -464,7 +467,7 @@ export function applyStyles() {
 
   const div6 = document.getElementById('div6');
   div6.style.display = 'flex';
-  div6.style.flexDirection = 'row';
+  div6.style.flexDirection = 'column';
   div6.style.alignItems = 'center';
   div6.style.gap = '.25rem';
 
@@ -479,6 +482,93 @@ export function applyStyles() {
     svg.style.height = '20px';
     svg.style.color = '#d9e1e4'; // fill
   });
+
+  const md = window.matchMedia('(min-width: 768px)');
+  const lg = window.matchMedia('(min-width: 1024px)');
+
+  function handleChange() {
+    if (md.matches) {
+      nav.style.paddingLeft = '2rem';
+      nav.style.paddingRight = '2rem';
+
+      container.style.paddingLeft = '3.5rem';
+      container.style.paddingRight = '3.5rem';
+
+      backdrop.style.opacity = '1';
+
+      main.style.flexDirection = 'row';
+      main.style.gap = '3.5rem';
+
+      heading.style.fontSize = '3rem';
+      heading.style.lineHeight = '4rem';
+      heading.style.letterSpacing = '-.06rem';
+
+      paragraph.style.fontSize = '1.125rem';
+      paragraph.style.lineHeight = '1.75rem';
+
+      button.style.fontWeight = '600';
+
+      smalls.forEach(small => {
+        small.style.fontSize = '.875rem';
+        small.style.lineHeight = '1.25rem';
+      });
+
+      section2.style.maxWidth = '42rem';
+
+      footer.style.flexDirection = 'row';
+      footer.style.paddingTop = '1.25rem';
+      footer.style.paddingBottom = '1.25rem';
+
+      div6.style.flexDirection = 'row';
+
+      if (lg.matches) {
+        container.style.paddingLeft = '7rem';
+        container.style.paddingRight = '7rem';
+
+        // main.style.gap = '7rem';
+
+        section2.style.maxWidth = '48rem';
+      }
+    } else {
+      nav.style.paddingLeft = '1rem';
+      nav.style.paddingRight = '1rem';
+
+      container.style.paddingLeft = '1rem';
+      container.style.paddingRight = '1rem';
+
+      backdrop.style.opacity = '.5';
+
+      main.style.flexDirection = 'column';
+      main.style.gap = '2rem';
+
+      heading.style.fontSize = '2.25rem';
+      heading.style.lineHeight = '3rem';
+      heading.style.letterSpacing = '-.045rem';
+
+      paragraph.style.fontSize = '1rem';
+      paragraph.style.lineHeight = '1.5rem';
+
+      button.style.fontWeight = '400';
+
+      smalls.forEach(small => {
+        small.style.fontSize = '.75rem';
+        small.style.lineHeight = '1rem';
+      });
+
+      section2.style.maxWidth = '28rem';
+
+      footer.style.flexDirection = 'column';
+      footer.style.paddingTop = '1rem';
+      footer.style.paddingBottom = '1rem';
+
+      div6.style.flexDirection = 'column';
+    }
+  }
+
+  md.onchange = handleChange;
+  lg.onchange = handleChange;
+
+  handleChange();
 
   const aHover = `
     #ul2 a:hover,
