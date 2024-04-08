@@ -349,7 +349,7 @@ export function applyStyles() {
   smallspan.style.fontWeight = '700';
 
   const section2 = document.getElementById('section-two');
-  section2.style.maxWidth = '28rem';
+  section2.style.maxWidth = '100%';
   section2.style.flex = '1 1';
   section2.style.display = 'flex';
   section2.style.flexDirection = 'column';
@@ -359,6 +359,7 @@ export function applyStyles() {
 
   const div5 = document.getElementById('div5');
   div5.style.width = '100%';
+  div5.style.maxWidth = '28rem';
   div5.style.minHeight = '25rem';
   div5.style.display = 'flex';
   div5.style.flexDirection = 'column';
@@ -515,6 +516,8 @@ export function applyStyles() {
 
       section2.style.maxWidth = '42rem';
 
+      div5.style.maxWidth = '100%';
+
       footer.style.flexDirection = 'row';
       footer.style.paddingTop = '1.25rem';
       footer.style.paddingBottom = '1.25rem';
@@ -555,7 +558,9 @@ export function applyStyles() {
         small.style.lineHeight = '1rem';
       });
 
-      section2.style.maxWidth = '28rem';
+      section2.style.maxWidth = '100%';
+
+      div5.style.maxWidth = '28rem';
 
       footer.style.flexDirection = 'column';
       footer.style.paddingTop = '1rem';
