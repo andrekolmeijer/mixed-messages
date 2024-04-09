@@ -364,7 +364,7 @@ export function applyStyles() {
   div5.style.display = 'flex';
   div5.style.flexDirection = 'column';
 
-  const console1 = document.getElementById('console');
+  const console1 = document.getElementById('console1');
   console1.style.borderTopLeftRadius = '.25rem';
   console1.style.borderTopRightRadius = '.25rem';
   console1.style.borderLeftWidth = '1px';
@@ -376,7 +376,7 @@ export function applyStyles() {
   console1.style.flexGrow = '0';
   console1.style.display = 'flex';
 
-  const span2 = document.getElementById('console').querySelector('span');
+  const span2 = document.getElementById('console1').querySelector('span');
   span2.style.display = 'inline-flex';
   span2.style.alignItems = 'center';
   span2.style.gap = '.5rem';
@@ -385,7 +385,7 @@ export function applyStyles() {
   span2.style.fontWeight = '600';
   span2.style.color = '#e9edf0';
 
-  const svg2 = document.getElementById('console').querySelector('svg');
+  const svg2 = document.getElementById('console1').querySelector('svg');
   svg2.style.width = '1.25rem';
   svg2.style.height = '1.25rem';
   svg2.style.color = '#84ba64'; // #84ba64 / #ae5f00

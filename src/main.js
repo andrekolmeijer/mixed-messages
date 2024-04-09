@@ -73,7 +73,7 @@ function formatDocument() {
   const small2 = createElementHelper('small');
   const section2 = createElementHelper('section', 'id', 'section-two');
   const div5 = createElementHelper('div', 'id', 'div5');
-  const console = createElementHelper('div', 'id', 'console');
+  const console1 = createElementHelper('div', 'id', 'console1');
   const span = createElementHelper('span');
   const console2 = createElementHelper('div', 'id', 'console2');
   const pre = createElementHelper('pre', 'id', 'pre');
@@ -130,8 +130,8 @@ function formatDocument() {
   document.getElementById('div4').appendChild(small2);
   document.querySelector('main').appendChild(section2);
   document.getElementById('section-two').appendChild(div5);
-  document.getElementById('div5').appendChild(console);
-  document.getElementById('console').appendChild(span);
+  document.getElementById('div5').appendChild(console1);
+  document.getElementById('console1').appendChild(span);
   document.getElementById('div5').appendChild(console2);
   document.getElementById('console2').appendChild(pre);
   document.getElementById('pre').appendChild(code);
