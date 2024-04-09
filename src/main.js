@@ -49,8 +49,6 @@ function formatForecast() {
 }
 
 function formatDocument() {
-  document.querySelector('html').setAttribute('data-theme', 'dark');
-
   const header = createElementHelper('header');
   const nav = createElementHelper('nav');
   const div = createElementHelper('div', 'id', 'div');
