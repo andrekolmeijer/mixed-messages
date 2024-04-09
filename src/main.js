@@ -28,7 +28,7 @@ function createAsciiArt(condition) {
       break;
   }
 
-  const span = createElementHelper('span', 'style', `color: ${selectedColor}`);
+  const span = createElementHelper('span', 'id', 'output1', 'style', `color: ${selectedColor}`);
   span.textContent = asciiArt;
   document.querySelector('code').appendChild(span);
 }
@@ -43,9 +43,21 @@ function formatForecast() {
   ? createAsciiArt('showers')
   : createAsciiArt()
 
-  const span = createElementHelper('span');
+  const span = createElementHelper('span', 'id', 'output2');
   span.textContent = wrappedForecast + '\n';
   document.querySelector('code').appendChild(span);
+}
+
+function updateForecast() {
+  const output1 = document.getElementById('output1');
+  const output2 = document.getElementById('output2');
+
+  if (output1 && output2) {
+    document.querySelector('code').removeChild(output1);
+    document.querySelector('code').removeChild(output2);
+  }
+
+  formatForecast();
 }
 
 function formatDocument() {
@@ -147,6 +159,8 @@ function formatDocument() {
   document.getElementById('li4').appendChild(a6);
   document.getElementById('ul4').appendChild(li5);
   document.getElementById('li5').appendChild(a7);
+
+  button.onclick = updateForecast;
 
   formatForecast()
   applyStyles()
