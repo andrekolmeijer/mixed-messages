@@ -60,11 +60,27 @@ function updateForecast() {
   formatForecast();
 }
 
+function initialForecast() {
+  const output2 = document.getElementById('output2');
+
+  if (!output2) formatForecast();
+
+  let outputInnerText = document.getElementById('output2').innerText;
+  console.log(outputInnerText)
+
+  while (outputInnerText.includes('clear') || outputInnerText.includes('showers')) {
+    updateForecast();
+
+    outputInnerText = document.getElementById('output2').innerText;
+    console.log(outputInnerText);
+  }
+}
+
 function formatDocument() {
   const header = createElementHelper('header');
   const nav = createElementHelper('nav');
   const div = createElementHelper('div', 'id', 'div');
-  const a = createElementHelper('a', 'href', '/')
+  const a = createElementHelper('a', 'href', '/');
   const div2 = createElementHelper('div', 'id', 'div2');
   const ul = createElementHelper('ul');
   const li = createElementHelper('li');
@@ -162,7 +178,7 @@ function formatDocument() {
 
   button.onclick = updateForecast;
 
-  formatForecast()
+  initialForecast()
   applyStyles()
 }
 
