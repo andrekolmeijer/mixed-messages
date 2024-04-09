@@ -28,9 +28,9 @@ function createAsciiArt(condition) {
       break;
   }
 
-  const span = createElementHelper('span', 'id', 'output1', 'style', `color: ${selectedColor}`);
+  const span = document.getElementById('output1');
+  span.style.color = `${selectedColor}`;
   span.textContent = asciiArt;
-  document.querySelector('code').appendChild(span);
 }
 
 function formatForecast() {
@@ -43,36 +43,17 @@ function formatForecast() {
   ? createAsciiArt('showers')
   : createAsciiArt()
 
-  const span = createElementHelper('span', 'id', 'output2');
+  const span = document.getElementById('output2');
   span.textContent = wrappedForecast + '\n';
-  document.querySelector('code').appendChild(span);
-}
-
-function updateForecast() {
-  const output1 = document.getElementById('output1');
-  const output2 = document.getElementById('output2');
-
-  if (output1 && output2) {
-    document.querySelector('code').removeChild(output1);
-    document.querySelector('code').removeChild(output2);
-  }
-
-  formatForecast();
 }
 
 function initialForecast() {
-  const output2 = document.getElementById('output2');
+  formatForecast()
 
-  if (!output2) formatForecast();
-
-  let outputInnerText = document.getElementById('output2').innerText;
-  console.log(outputInnerText)
-
-  while (outputInnerText.includes('clear') || outputInnerText.includes('showers')) {
-    updateForecast();
-
-    outputInnerText = document.getElementById('output2').innerText;
-    console.log(outputInnerText);
+  let innerText = document.getElementById('output2').innerText;
+  while (innerText.includes('clear') || innerText.includes('showers')) {
+    formatForecast()
+    innerText = document.getElementById('output2').innerText;
   }
 }
 
@@ -106,6 +87,8 @@ function formatDocument() {
   const console2 = createElementHelper('div', 'id', 'console2');
   const pre = createElementHelper('pre', 'id', 'pre');
   const code = createElementHelper('code');
+  const span2 = createElementHelper('span', 'id', 'output1');
+  const span3 = createElementHelper('span', 'id', 'output2');
   const paragraph2 = createElementHelper('p');
   const footer = createElementHelper('footer');
   const ul3 = createElementHelper('ul', 'id', 'ul3');
@@ -163,6 +146,8 @@ function formatDocument() {
   document.getElementById('div5').appendChild(console2);
   document.getElementById('console2').appendChild(pre);
   document.getElementById('pre').appendChild(code);
+  document.querySelector('code').appendChild(span2);
+  document.querySelector('code').appendChild(span3);
   document.getElementById('section-two').appendChild(paragraph2);
   document.getElementById('app').appendChild(footer);
   document.querySelector('footer').appendChild(ul3);
@@ -176,7 +161,7 @@ function formatDocument() {
   document.getElementById('ul4').appendChild(li5);
   document.getElementById('li5').appendChild(a7);
 
-  button.onclick = updateForecast;
+  button.onclick = formatForecast;
 
   initialForecast()
   applyStyles()
