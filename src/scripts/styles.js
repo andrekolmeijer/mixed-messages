@@ -481,7 +481,6 @@ export function applyStyles() {
   svgs4.forEach(svg => {
     svg.style.width = '20px';
     svg.style.height = '20px';
-    svg.style.color = '#d9e1e4'; // fill
   });
 
   const md = window.matchMedia('(min-width: 768px)');
