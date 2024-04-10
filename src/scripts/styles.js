@@ -345,8 +345,8 @@ export function applyStyles() {
     small.style.color = '#CBD4D9';
   });
 
-  const smallspan = document.querySelector('small').querySelector('span');
-  smallspan.style.fontWeight = '700';
+  const span2 = document.querySelector('small').querySelector('span');
+  span2.style.fontWeight = '700';
 
   const section2 = document.getElementById('section-two');
   section2.style.maxWidth = '100%';
@@ -376,14 +376,14 @@ export function applyStyles() {
   console1.style.flexGrow = '0';
   console1.style.display = 'flex';
 
-  const span2 = document.getElementById('console1').querySelector('span');
-  span2.style.display = 'inline-flex';
-  span2.style.alignItems = 'center';
-  span2.style.gap = '.5rem';
-  span2.style.fontSize = '.875rem';
-  span2.style.lineHeight = '1.25rem';
-  span2.style.fontWeight = '600';
-  span2.style.color = '#e9edf0';
+  const span3 = document.getElementById('console1').querySelector('span');
+  span3.style.display = 'inline-flex';
+  span3.style.alignItems = 'center';
+  span3.style.gap = '.5rem';
+  span3.style.fontSize = '.875rem';
+  span3.style.lineHeight = '1.25rem';
+  span3.style.fontWeight = '600';
+  span3.style.color = '#e9edf0';
 
   const svg2 = document.getElementById('console1').querySelector('svg');
   svg2.style.width = '1.25rem';
