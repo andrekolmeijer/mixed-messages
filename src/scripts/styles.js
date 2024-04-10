@@ -164,7 +164,7 @@ export function applyStyles() {
   const spans = document.querySelector('ul').querySelectorAll('span');
   spans.forEach(span => {
     span.style.fontSize = '.875rem';
-    span.style.fontWeight = '500';
+    // span.style.fontWeight = '500';
     span.style.lineHeight = '1.25rem';
     span.style.color = '#fff';
   });
@@ -454,7 +454,7 @@ export function applyStyles() {
   const spans3 = document.querySelector('footer').querySelectorAll('span');
   spans3.forEach(span => {
     span.style.fontSize = '.875rem';
-    span.style.fontWeight = '500';
+    // span.style.fontWeight = '500';
     span.style.lineHeight = '1.25rem';
     span.style.color = '#fff';
   });
