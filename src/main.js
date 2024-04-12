@@ -1,6 +1,8 @@
 import { wrapText, createForecast } from "./scripts/sharedFunctions.js";
-import { createElementHelper } from "./scripts/helperFunctions.js";
+import { createElementHelper, useCopyToClipboard } from "./scripts/helperFunctions.js";
 import { applyStyles } from "./scripts/styles.js";
+
+const copyToClipboard = useCopyToClipboard();
 
 function createAsciiArt(condition) {
 
@@ -44,7 +46,7 @@ function formatForecast() {
   : createAsciiArt()
 
   const span = document.getElementById('output2');
-  span.textContent = wrappedForecast + '\n';
+  span.textContent = wrappedForecast;
 }
 
 function initialForecast() {
@@ -55,6 +57,13 @@ function initialForecast() {
     formatForecast()
     innerText = document.getElementById('output2').innerText;
   }
+}
+
+function copyForecast() {
+  const toCopy = document.getElementById('output1').innerText;
+  const toCopy2 = document.getElementById('output2').innerText;
+
+  copyToClipboard(toCopy + toCopy2);
 }
 
 function formatDocument() {
@@ -89,12 +98,14 @@ function formatDocument() {
   const code = createElementHelper('code');
   const span2 = createElementHelper('span', 'id', 'output1');
   const span3 = createElementHelper('span', 'id', 'output2');
+  const div6 = createElementHelper('div', 'id', 'div6');
+  const button2 = createElementHelper('a', 'id', 'button2', 'type', 'button');
   const paragraph2 = createElementHelper('p');
   const footer = createElementHelper('footer');
   const ul3 = createElementHelper('ul', 'id', 'ul3');
   const li3 = createElementHelper('li', 'id', 'li3');
   const a4 = createElementHelper('a', 'href', 'https://nodejs.org');
-  const div6 = createElementHelper('div', 'id', 'div6');
+  const div7 = createElementHelper('div', 'id', 'div7');
   const a5 = createElementHelper('a', 'href', 'https://andrekolmeijer.nl');
   const ul4 = createElementHelper('ul', 'id', 'ul4');
   const li4 = createElementHelper('li', 'id', 'li4');
@@ -111,6 +122,7 @@ function formatDocument() {
   small.innerHTML = 'Runs a script <span>modified</span> for the browser. Open the browser console to view and reload to run the original.';
   small2.innerHTML = 'Want to learn more? Visit the <a href="https://github.com/andrekolmeijer/mixed-messages">GitHub repo</a> for details.';
   span.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" /></svg> Console';
+  button2.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5A3.375 3.375 0 0 0 6.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0 0 15 2.25h-1.5a2.251 2.251 0 0 0-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 0 0-9-9Z" /></svg> Copy to clipboard';
   paragraph2.innerHTML = 'Learn how the color changes by checking out the <a href="https://github.com/andrekolmeijer/mixed-messages/blob/master/src/main.js">source code</a>.';
   a4.innerHTML = '<span>Design from Nodejs.org</span>';
   a5.innerHTML = '<span>André Kolmeijer</span>';
@@ -148,20 +160,23 @@ function formatDocument() {
   document.getElementById('pre').appendChild(code);
   document.querySelector('code').appendChild(span2);
   document.querySelector('code').appendChild(span3);
+  document.getElementById('console2').appendChild(div6);
+  document.getElementById('div6').appendChild(button2);
   document.getElementById('section-two').appendChild(paragraph2);
   document.getElementById('app').appendChild(footer);
   document.querySelector('footer').appendChild(ul3);
   document.getElementById('ul3').appendChild(li3);
   document.getElementById('li3').appendChild(a4);
-  document.querySelector('footer').appendChild(div6);
-  document.getElementById('div6').appendChild(a5);
-  document.getElementById('div6').appendChild(ul4);
+  document.querySelector('footer').appendChild(div7);
+  document.getElementById('div7').appendChild(a5);
+  document.getElementById('div7').appendChild(ul4);
   document.getElementById('ul4').appendChild(li4);
   document.getElementById('li4').appendChild(a6);
   document.getElementById('ul4').appendChild(li5);
   document.getElementById('li5').appendChild(a7);
 
   button.onclick = formatForecast;
+  button2.onclick = copyForecast;
 
   initialForecast()
   applyStyles()

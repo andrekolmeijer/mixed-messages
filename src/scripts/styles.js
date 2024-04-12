@@ -283,6 +283,7 @@ export function applyStyles() {
   div4.style.gap = '1rem';
 
   const button = document.getElementById('button');
+  button.style.userSelect = 'none';
   button.style.color = '#fff';
   button.style.cursor = 'pointer';
   button.style.position = 'relative';
@@ -398,6 +399,7 @@ export function applyStyles() {
   console2.style.backgroundColor = 'rgb(13 18 28 / 1)';
   console2.style.flexGrow = '1';
   console2.style.display = 'flex';
+  console2.style.flexDirection = 'column';
 
   const pre = document.getElementById('pre');
   pre.style.padding = '1rem';
@@ -415,6 +417,34 @@ export function applyStyles() {
   const spans2 = document.querySelector('code').querySelectorAll('span');
   spans2[1].style.color = '#ECEFF4'; // rgb(203 212 217 / 1) / #D8DEE9
   spans2[1].style.lineHeight = '1.375rem';
+
+  const div6 = document.getElementById('div6');
+  div6.style.display = 'flex';
+  div6.style.alignItems = 'center';
+  div6.style.justifyContent = 'end';
+  div6.style.borderTop = '1px solid rgb(44 52 55 / 1)';
+  div6.style.padding = '.75rem 1rem';
+  div6.style.fontSize = '.875rem';
+  div6.style.lineHeight = '1.25rem';
+  // div6.style.fontWeight = '500';
+
+  const button2 = document.getElementById('button2');
+  button2.style.userSelect = 'none';
+  button2.style.cursor = 'pointer';
+  button2.style.position = 'relative';
+  button2.style.display = 'inline-flex';
+  button2.style.alignItems = 'center';
+  button2.style.justifyContent = 'center';
+  button2.style.gap = '.5rem';
+  button2.style.padding = '.375rem .75rem';
+  button2.style.fontWeight = '400';
+  button2.style.borderRadius = '.25rem';
+  button2.style.backgroundColor = '#2c3437';
+  button2.style.color = '#E9EDF0';
+
+  const svg3 = document.getElementById('button2').querySelector('svg');
+  svg3.style.width = '1.25rem';
+  svg3.style.height = '1.25rem';
 
   const paragraph2 = document.getElementById('section-two').querySelector('p');
   paragraph2.style.textAlign = 'center';
@@ -466,11 +496,11 @@ export function applyStyles() {
     svg.style.color = 'rgb(233 237 240 / 1)';
   });
 
-  const div6 = document.getElementById('div6');
-  div6.style.display = 'flex';
-  div6.style.flexDirection = 'column';
-  div6.style.alignItems = 'center';
-  div6.style.gap = '.25rem';
+  const div7 = document.getElementById('div7');
+  div7.style.display = 'flex';
+  div7.style.flexDirection = 'column';
+  div7.style.alignItems = 'center';
+  div7.style.gap = '.25rem';
 
   const ul4 = document.getElementById('ul4');
   ul4.style.display = 'flex';
@@ -521,7 +551,7 @@ export function applyStyles() {
       footer.style.paddingTop = '1.25rem';
       footer.style.paddingBottom = '1.25rem';
 
-      div6.style.flexDirection = 'row';
+      div7.style.flexDirection = 'row';
 
       if (lg.matches) {
         container.style.paddingLeft = '7rem';
@@ -565,7 +595,7 @@ export function applyStyles() {
       footer.style.paddingTop = '1rem';
       footer.style.paddingBottom = '1rem';
 
-      div6.style.flexDirection = 'column';
+      div7.style.flexDirection = 'column';
     }
   }
 
@@ -577,7 +607,7 @@ export function applyStyles() {
   const aHover = `
     #ul2 a:hover,
     #ul3 a:hover,
-    #div6 a:hover {
+    #div7 a:hover {
       background-color: rgb(44 52 55 / 1);
     }
   `;
@@ -589,15 +619,23 @@ export function applyStyles() {
   `;
 
   const buttonFocusHover = `
-    #button:focus,
-    #button:hover {
+    #button:hover,
+    #button:focus {
       background-color: rgba(65,126,56,.2) !important;
+    }
+  `;
+
+  const button2FocusHover = `
+    #button2:hover,
+    #button2:focus {
+      background-color: rgb(85 96 102 / .6) !important;
     }
   `;
 
   styleSheet.insertRule(aHover);
   styleSheet.insertRule(aHover2);
   styleSheet.insertRule(buttonFocusHover);
+  styleSheet.insertRule(button2FocusHover);
 
   document.adoptedStyleSheets = [cssReset, styleSheet];
 
