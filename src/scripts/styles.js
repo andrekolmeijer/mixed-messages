@@ -150,6 +150,7 @@ export function applyStyles() {
   lis.forEach(li => {
     li.style.display = 'none'; // flex
     li.style.alignItems = 'center';
+    li.style.marginTop = '3px';
   })
 
   const as = document.querySelector('ul').querySelectorAll('a');
@@ -171,8 +172,8 @@ export function applyStyles() {
 
   const svgs = document.querySelector('ul').querySelectorAll('svg');
   svgs.forEach(svg => {
-    svg.style.width = '.875rem';
-    svg.style.height = '.875rem';
+    svg.style.width = '.75rem';
+    svg.style.height = '.75rem';
     svg.style.color = 'rgb(233 237 240 / 1)';
   });
 
@@ -522,6 +523,10 @@ export function applyStyles() {
       nav.style.paddingLeft = '2rem';
       nav.style.paddingRight = '2rem';
 
+      lis.forEach(li => {
+        li.style.display = 'flex';
+      })
+
       container.style.paddingLeft = '3.5rem';
       container.style.paddingRight = '3.5rem';
 
@@ -565,6 +570,10 @@ export function applyStyles() {
     } else {
       nav.style.paddingLeft = '1rem';
       nav.style.paddingRight = '1rem';
+
+      lis.forEach(li => {
+        li.style.display = 'none';
+      })
 
       container.style.paddingLeft = '1rem';
       container.style.paddingRight = '1rem';
