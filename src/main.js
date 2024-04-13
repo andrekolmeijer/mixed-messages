@@ -112,6 +112,8 @@ function formatDocument() {
   const a6 = createElementHelper('a', 'href', 'https://github.com/andrekolmeijer', 'title', 'GitHub profile');
   const li5 = createElementHelper('li', 'id', 'li5');
   const a7 = createElementHelper('a', 'href', 'https://x.com/andrekolmeijer', 'title', 'X/Twitter profile');
+  const li6 = createElementHelper('li', 'id', 'li6');
+  const a8 = createElementHelper('a', 'href', 'https://linkedin.com/in/andrekolmeijer', 'title', 'Linkedin profile');
 
   a.innerHTML = '<span>GPT</span> Weather';
   a2.innerHTML = '<span>About</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon" class="NavItem_icon__GHTPH"><path fill-rule="evenodd" d="M8.25 3.75H19.5a.75.75 0 0 1 .75.75v11.25a.75.75 0 0 1-1.5 0V6.31L5.03 20.03a.75.75 0 0 1-1.06-1.06L17.69 5.25H8.25a.75.75 0 0 1 0-1.5Z" clip-rule="evenodd"></path></svg>';
@@ -128,6 +130,7 @@ function formatDocument() {
   a5.innerHTML = '<span>André Kolmeijer</span>';
   a6.innerHTML = '<span><svg viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M10 1.25C5.16562 1.25 1.25 5.16562 1.25 10C1.25 13.8719 3.75469 17.1422 7.23281 18.3016C7.67031 18.3781 7.83437 18.1156 7.83437 17.8859C7.83437 17.6781 7.82344 16.9891 7.82344 16.2563C5.625 16.6609 5.05625 15.7203 4.88125 15.2281C4.78281 14.9766 4.35625 14.2 3.98438 13.9922C3.67812 13.8281 3.24063 13.4234 3.97344 13.4125C4.6625 13.4016 5.15469 14.0469 5.31875 14.3094C6.10625 15.6328 7.36406 15.2609 7.86719 15.0312C7.94375 14.4625 8.17344 14.0797 8.425 13.8609C6.47813 13.6422 4.44375 12.8875 4.44375 9.54062C4.44375 8.58906 4.78281 7.80156 5.34062 7.18906C5.25313 6.97031 4.94687 6.07344 5.42812 4.87031C5.42812 4.87031 6.16094 4.64063 7.83437 5.76719C8.53438 5.57031 9.27813 5.47187 10.0219 5.47187C10.7656 5.47187 11.5094 5.57031 12.2094 5.76719C13.8828 4.62969 14.6156 4.87031 14.6156 4.87031C15.0969 6.07344 14.7906 6.97031 14.7031 7.18906C15.2609 7.80156 15.6 8.57812 15.6 9.54062C15.6 12.8984 13.5547 13.6422 11.6078 13.8609C11.925 14.1344 12.1984 14.6594 12.1984 15.4797C12.1984 16.65 12.1875 17.5906 12.1875 17.8859C12.1875 18.1156 12.3516 18.3891 12.7891 18.3016C14.5261 17.7152 16.0355 16.5988 17.1048 15.1096C18.1741 13.6204 18.7495 11.8333 18.75 10C18.75 5.16562 14.8344 1.25 10 1.25Z"></path></svg></span>';
   a7.innerHTML = '<span><svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-label="https://twitter.com/nodejs"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"></path></svg></span>';
+  a8.innerHTML = '<span><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="https://www.linkedin.com/company/node-js"><g id="Social Icon"><rect id="bg" width="20" height="20" rx="10" fill="#1275B1"></rect><g id="linked_in"><path d="M7.58468 5.49444C7.58468 6.16198 7.00608 6.70312 6.29234 6.70312C5.5786 6.70312 5 6.16198 5 5.49444C5 4.82691 5.5786 4.28577 6.29234 4.28577C7.00608 4.28577 7.58468 4.82691 7.58468 5.49444Z" fill="white"></path><path d="M5.17673 7.59155H7.38586V14.2858H5.17673V7.59155Z" fill="white"></path><path d="M10.9426 7.59155H8.73343V14.2858H10.9426C10.9426 14.2858 10.9426 12.1783 10.9426 10.8607C10.9426 10.0698 11.2126 9.27544 12.2901 9.27544C13.5079 9.27544 13.5005 10.3104 13.4949 11.1123C13.4874 12.1604 13.5052 13.2299 13.5052 14.2858H15.7143V10.7527C15.6956 8.49675 15.1077 7.45725 13.1738 7.45725C12.0253 7.45725 11.3134 7.97867 10.9426 8.4504V7.59155Z" fill="white"></path></g></g></svg></span>';
 
   document.getElementById('app').appendChild(header);
   document.querySelector('header').appendChild(nav);
@@ -174,6 +177,8 @@ function formatDocument() {
   document.getElementById('li4').appendChild(a6);
   document.getElementById('ul4').appendChild(li5);
   document.getElementById('li5').appendChild(a7);
+  document.getElementById('ul4').appendChild(li6);
+  document.getElementById('li6').appendChild(a8);
 
   button.onclick = formatForecast;
   button2.onclick = copyForecast;
