@@ -33,7 +33,7 @@ export function applyStyles() {
 
   const all = `
     *, :after, :before {
-      -webkit-font-smoothing: auto;
+      -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: auto;
       box-sizing: border-box;
       border: 0 solid;
@@ -283,6 +283,7 @@ export function applyStyles() {
   div4.style.gap = '1rem';
 
   const button = document.getElementById('button');
+  button.style.webkitUserSelect = 'none';
   button.style.userSelect = 'none';
   button.style.color = '#fff';
   button.style.cursor = 'pointer';
