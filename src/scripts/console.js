@@ -1,5 +1,5 @@
-import { createForecast } from "../util/createForecast.js";
-import { wrapText } from "../util/wrapText.js";
+import { createForecast } from "../utilities/createForecast.js";
+import { wrapText } from "../utilities/wrapText.js";
 
 function createAsciiArt(condition) {
 
