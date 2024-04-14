@@ -1,6 +1,6 @@
 import { createForecast } from "./utilities/createForecast.js";
 import { wrapText } from "./utilities/wrapText.js";
-import { useCopyToClipboard } from "./utilities/utils.js";
+import { useCopyToClipboard } from "./wrappers/useCopyToClipboard.js";
 import { createElement } from "./utilities/createElement.js";
 import { applyStyles } from "./styles/applyStyles.js";
 
