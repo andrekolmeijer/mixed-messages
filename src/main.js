@@ -1,4 +1,5 @@
-import { wrapText, createForecast } from "./scripts/shared.js";
+import { createForecast } from "./scripts/shared.js";
+import { wrapText } from "./util/wrapText.js";
 import { useCopyToClipboard } from "./util/utils.js";
 import { createElement } from "./util/createElement.js";
 import { applyStyles } from "./styles/applyStyles.js";
