@@ -217,7 +217,7 @@ export function applyStyles() {
   backdrop.style.zIndex = '-10';
   backdrop.style.width = '100%';
   backdrop.style.height = '100%';
-  backdrop.style.backgroundImage = 'url(src/assets/img/hexagon-grid.svg)';
+  backdrop.style.backgroundImage = 'url(src/assets/images/hexagon-grid.svg)';
   backdrop.style.backgroundPosition = '50%';
   backdrop.style.backgroundRepeat = 'no-repeat';
   backdrop.style.opacity = '.5';
