@@ -1,5 +1,5 @@
 import { wrapText, createForecast } from "./scripts/shared.js";
-import { createElementHelper, useCopyToClipboard } from "./scripts/utils.js";
+import { createElementHelper, useCopyToClipboard } from "./util/utils.js";
 import { applyStyles } from "./scripts/styles.js";
 
 const copyToClipboard = useCopyToClipboard();
