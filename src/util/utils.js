@@ -1,4 +1,4 @@
-export function createElementHelper(elName, attrName, attrValue, attrName2, attrValue2, attrName3, attrValue3) {
+export function createElement(elName, attrName, attrValue, attrName2, attrValue2, attrName3, attrValue3) {
   const el = document.createElement(elName);
 
   if (attrName && attrValue) el.setAttribute(attrName, attrValue)
