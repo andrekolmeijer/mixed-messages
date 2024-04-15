@@ -126,7 +126,7 @@ function formatDocument() {
   const li5 = createElement('li', 'id', 'li5');
   const a7 = createElement('a', 'href', 'https://x.com/andrekolmeijer', 'title', 'X/Twitter profile');
   const li6 = createElement('li', 'id', 'li6');
-  const a8 = createElement('a', 'href', 'https://linkedin.com/in/andrekolmeijer', 'title', 'Linkedin profile');
+  const a8 = createElement('a', 'href', 'https://linkedin.com/in/andrekolmeijer', 'title', 'LinkedIn profile');
 
   a.innerHTML = '<span>GPT</span> Weather';
   a2.innerHTML = `<span>About</span> ${ArrowUpRight}`;
