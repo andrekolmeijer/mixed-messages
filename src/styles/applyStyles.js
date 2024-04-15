@@ -407,6 +407,7 @@ export function applyStyles() {
   // div6.style.fontWeight = '500';
 
   const button2 = document.getElementById('button2');
+  button2.style.webkitUserSelect = 'none';
   button2.style.userSelect = 'none';
   button2.style.cursor = 'pointer';
   button2.style.position = 'relative';
