@@ -1,7 +1,4 @@
-import { createElement } from "./utilities/createElement.js";
-import { createForecast } from "./utilities/createForecast.js";
-import { wrapText } from "./utilities/wrapText.js";
-
+import { createElement, createForecast, wrapText } from "./utilities/index.js";
 import { useCopyToClipboard } from "./wrappers/useCopyToClipboard.js";
 import { applyStyles } from "./styles/applyStyles.js";
 

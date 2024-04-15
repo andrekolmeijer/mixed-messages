@@ -1,4 +1,4 @@
-import { loadFonts } from "../utilities/loadFonts.js";
+import { loadFonts } from "../utilities/index.js";
 
 export function applyStyles() {
 
