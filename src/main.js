@@ -10,6 +10,7 @@ import {
   RocketLaunch,
   CommandLine,
   ClipboardDocument,
+  NodejsLight,
   GitHub,
   Twitter,
   LinkedIn
@@ -139,7 +140,7 @@ function formatDocument() {
   span.innerHTML = `${CommandLine} Console`;
   button2.innerHTML = `${ClipboardDocument} Copy to clipboard`;
   paragraph2.innerHTML = 'Learn how the color changes by checking out the <a href="https://github.com/andrekolmeijer/mixed-messages/blob/master/src/main.js">source code</a>.';
-  a4.innerHTML = '<span>Design from Nodejs.org</span>';
+  a4.innerHTML = `<span>Design from</span> ${NodejsLight}`;
   a5.innerHTML = '<span>André Kolmeijer</span>';
   a6.innerHTML = `<span>${GitHub}</span>`;
   a7.innerHTML = `<span>${Twitter}</span>`;

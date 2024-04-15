@@ -469,9 +469,9 @@ export function applyStyles() {
 
   const svgs3 = document.getElementById('ul3').querySelectorAll('svg');
   svgs3.forEach(svg => {
-    svg.style.width = '.875rem';
-    svg.style.height = '.875rem';
-    svg.style.color = 'rgb(233 237 240 / 1)';
+    svg.style.width = '67px'; // 80px
+    svg.style.height = '20px'; // 24px
+    // svg.style.margin = '-2px 0';
   });
 
   const div7 = document.getElementById('div7');
