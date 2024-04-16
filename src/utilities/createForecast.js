@@ -1,4 +1,5 @@
-import { db } from "../stores/database.js";
+import { useDataStore } from "../stores/DataStore.js";
+const { db } = useDataStore();
 
 export function createForecast() {
   const forecast = [];
