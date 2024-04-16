@@ -1,6 +1,7 @@
 import { createElement, createForecast, wrapText } from "./utilities/index.js";
 import { useCopyToClipboard } from "./wrappers/useCopyToClipboard.js";
 import { applyStyles } from "./styles/applyStyles.js";
+import { useDataStore } from "./stores/DataStore.js";
 
 import {
   ArrowUpRight,
@@ -14,6 +15,7 @@ import {
 } from "./components/icons/index.js";
 
 const copyToClipboard = useCopyToClipboard();
+const { author } = useDataStore();
 
 function createAsciiArt(condition) {
 
@@ -138,7 +140,7 @@ function formatDocument() {
   button2.innerHTML = `${ClipboardDocument} Copy to clipboard`;
   paragraph2.innerHTML = 'Learn how the color changes by checking out the <a href="https://github.com/andrekolmeijer/mixed-messages/blob/master/src/main.js">source code</a>.';
   a4.innerHTML = `<span>Design by</span> ${NodejsLight}`;
-  a5.innerHTML = '<span>André Kolmeijer</span>';
+  a5.innerHTML = `<span>${author.name}</span>`;
   a6.innerHTML = `<span>${GitHub}</span>`;
   a7.innerHTML = `<span>${Twitter}</span>`;
   a8.innerHTML = `<span>${LinkedIn}</span>`;
