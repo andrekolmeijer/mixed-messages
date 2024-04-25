@@ -1,5 +1,5 @@
 import { createElement, createForecast, wrapText } from "./utilities/index.js";
-import { useCopyToClipboard } from "./wrappers/useCopyToClipboard.js";
+import { useCopyToClipboard } from "./wrappers/index.js";
 import { applyStyles } from "./styles/applyStyles.js";
 import { useDataStore } from "./stores/DataStore.js";
 

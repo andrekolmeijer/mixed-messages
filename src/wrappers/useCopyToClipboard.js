@@ -14,7 +14,7 @@ async function copyToClipboard(value) {
   }
 }
 
-export function useCopyToClipboard() {
+function useCopyToClipboard() {
   let timerId;
 
   async function copyText(text) {
@@ -34,6 +34,10 @@ export function useCopyToClipboard() {
 
   return copyText;
 }
+
+export default useCopyToClipboard;
+
+
 
 // This level of abstraction doesn't work because useCopyToClipWart doesn't wait for
 // async copyText to resolve before returning the values. And there is no point in

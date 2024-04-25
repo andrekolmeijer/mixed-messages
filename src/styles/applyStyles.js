@@ -1,8 +1,11 @@
 import { loadFonts } from "../utilities/index.js";
+import { useMediaQuery } from "../wrappers/index.js";
+
+const { md, lg, add } = useMediaQuery();
 
 export function applyStyles() {
 
-  loadFonts()
+  loadFonts();
 
   const cssReset = new CSSStyleSheet();
   const styleSheet = new CSSStyleSheet();
@@ -492,8 +495,22 @@ export function applyStyles() {
     svg.style.height = '20px';
   });
 
-  const md = window.matchMedia('(min-width: 768px)');
-  const lg = window.matchMedia('(min-width: 1024px)');
+  function handler() {
+    if (md.matches) {
+      console1.style.backgroundColor = 'red';
+
+      if (lg.matches) {
+        console1.style.backgroundColor = 'blue';
+      }
+    } else {
+      console1.style.backgroundColor = 'green';
+    }
+  }
+
+  add(md, handler);
+  add(lg, handler);
+
+  handler();
 
   function handleChange() {
     if (md.matches) {
