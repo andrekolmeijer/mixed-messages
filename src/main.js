@@ -1,4 +1,4 @@
-import { createElement, formatForecast } from "./utilities/index.js";
+import { createElement, formatForecast, setForecast } from "./utilities/index.js";
 import { useCopyToClipboard } from "./wrappers/index.js";
 import { applyStyles } from "./styles/applyStyles.js";
 import { useDataStore } from "./stores/DataStore.js";
@@ -13,16 +13,6 @@ import { NavBar, Footer } from "./components/index.js";
 
 const { url } = useDataStore();
 const copyToClipboard = useCopyToClipboard();
-
-function initialForecast() {
-  formatForecast()
-
-  let innerText = document.getElementById('output2').innerText;
-  while (innerText.includes('clear') || innerText.includes('showers')) {
-    formatForecast()
-    innerText = document.getElementById('output2').innerText;
-  }
-}
 
 function copyForecast() {
   const toCopy = document.getElementById('output1').innerText;
@@ -102,7 +92,7 @@ function formatDocument() {
   button.onclick = formatForecast;
   button2.onclick = copyForecast;
 
-  initialForecast()
+  setForecast()
   applyStyles()
 }
 
