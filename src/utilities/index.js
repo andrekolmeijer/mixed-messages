@@ -1,3 +1,4 @@
+export { copyForecast } from './copyForecast.js';
 export { createAsciiArt } from './createAsciiArt.js';
 export { createElement } from './createElement.js';
 export { createForecast } from './createForecast.js';

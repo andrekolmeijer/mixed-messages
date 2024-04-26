@@ -1,5 +1,4 @@
-import { createElement, formatForecast, setForecast } from "./utilities/index.js";
-import { useCopyToClipboard } from "./wrappers/index.js";
+import { copyForecast, createElement, formatForecast, setForecast } from "./utilities/index.js";
 import { applyStyles } from "./styles/applyStyles.js";
 import { useDataStore } from "./stores/DataStore.js";
 
@@ -12,14 +11,6 @@ import {
 import { NavBar, Footer } from "./components/index.js";
 
 const { url } = useDataStore();
-const copyToClipboard = useCopyToClipboard();
-
-function copyForecast() {
-  const toCopy = document.getElementById('output1').innerText;
-  const toCopy2 = document.getElementById('output2').innerText;
-
-  copyToClipboard(toCopy + toCopy2);
-}
 
 function formatDocument() {
 
