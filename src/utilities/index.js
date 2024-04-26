@@ -1,3 +1,4 @@
+export { createAsciiArt } from './createAsciiArt.js';
 export { createElement } from './createElement.js';
 export { createForecast } from './createForecast.js';
 export { loadFonts } from './loadFonts.js';
