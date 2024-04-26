@@ -1,4 +1,4 @@
-import { createAsciiArt, createElement, createForecast, wrapText } from "./utilities/index.js";
+import { createElement, formatForecast } from "./utilities/index.js";
 import { useCopyToClipboard } from "./wrappers/index.js";
 import { applyStyles } from "./styles/applyStyles.js";
 import { useDataStore } from "./stores/DataStore.js";
@@ -13,20 +13,6 @@ import { NavBar, Footer } from "./components/index.js";
 
 const { url } = useDataStore();
 const copyToClipboard = useCopyToClipboard();
-
-function formatForecast() {
-  const forecast = createForecast();
-  const wrappedForecast = wrapText(forecast, 85);
-
-  forecast.includes('clear')
-  ? createAsciiArt('clear')
-  : forecast.includes('showers')
-  ? createAsciiArt('showers')
-  : createAsciiArt()
-
-  const span = document.getElementById('output2');
-  span.textContent = wrappedForecast;
-}
 
 function initialForecast() {
   formatForecast()
