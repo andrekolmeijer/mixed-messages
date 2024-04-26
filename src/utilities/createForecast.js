@@ -1,4 +1,5 @@
 import { useDataStore } from "../stores/DataStore.js";
+
 const { db } = useDataStore();
 
 export function createForecast() {
@@ -9,13 +10,13 @@ export function createForecast() {
 
     switch (key) {
       case 'cloudCoverage':
-        forecast.push(`Today's forecast is ${db[key][index]}.`)
+        forecast.push(`Today's forecast is ${db[key][index]}.`);
         break;
       case 'temperature':
-        forecast.push(`The temperature is ${db[key][index]} and`)
+        forecast.push(`The temperature is ${db[key][index]} and`);
         break;
       case 'windSpeed':
-        forecast.push(`${db[key][index]}.`)
+        forecast.push(`${db[key][index]}.`);
         break;
       default:
         break;
