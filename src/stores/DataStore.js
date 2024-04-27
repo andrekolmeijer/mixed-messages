@@ -21,7 +21,7 @@ export const useDataStore = () => ({
       'github-repo': `${this.provider.github}/${this.author.profile}/${this.author.repo}`,
       'github-profile': `${this.provider.github}/${this.author.profile}`,
       'twitter-profile': `${this.provider.twitter}/${this.author.profile}`,
-      'linkedin-profile': `${this.provider.linkedin}/in/${this.author.profile}`,
+      'linkedin-profile': `${this.provider.linkedin}/in/${this.author.profile}`
     }
   }
 });

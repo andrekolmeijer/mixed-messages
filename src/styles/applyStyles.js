@@ -100,7 +100,7 @@ export function applyStyles() {
   div.style.border = '0 solid rgb(44 52 55 / 1';
   div.style.padding = '0';
   div.style.flexShrink = '0';
-  div.style.fontFamily = 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
+  div.style.fontFamily = 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
 
   const a = document.getElementById('div').querySelector('a');
   a.style.flex = '1 1 0%';
@@ -384,7 +384,7 @@ export function applyStyles() {
 
   const pre = document.getElementById('pre');
   pre.style.padding = '1rem';
-  pre.style.fontFamily = 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace'
+  pre.style.fontFamily = 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
   pre.style.flexGrow = '1';
   pre.style.display = 'flex';
 

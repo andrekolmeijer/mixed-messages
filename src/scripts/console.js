@@ -40,9 +40,9 @@ function formatForecast() {
   ? asciiArt = createAsciiArt('clear')
   : forecast.includes('showers')
   ? asciiArt = createAsciiArt('showers')
-  : asciiArt = createAsciiArt()
+  : asciiArt = createAsciiArt();
 
-  console.log(asciiArt + wrappedForecast + '\n')
+  console.log(asciiArt + wrappedForecast + '\n');
 }
 
-formatForecast()
+formatForecast();

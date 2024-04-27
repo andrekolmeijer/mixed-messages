@@ -58,7 +58,7 @@ function useCopyToClipWart() {
     }
   }
 
-  console.log(copied) // undefined
+  console.log(copied); // undefined
   setTimeout(() => console.log(copied), 10); // true
 
   return [copied, copyText];

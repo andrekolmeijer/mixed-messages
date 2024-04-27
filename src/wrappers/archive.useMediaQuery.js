@@ -306,7 +306,7 @@ function handleChange() {
   }
 }
 
-// mdRemove()
-// lgRemove()
+// mdRemove();
+// lgRemove();
 
 handleChange();

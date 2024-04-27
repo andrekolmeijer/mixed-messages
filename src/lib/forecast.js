@@ -40,7 +40,7 @@ export function forecast() {
   ? createAsciiArt('clear')
   : forecast.includes('showers')
   ? createAsciiArt('showers')
-  : createAsciiArt()
+  : createAsciiArt();
 
   const span = document.getElementById('output2');
   span.textContent = wrappedForecast;
