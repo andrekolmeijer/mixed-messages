@@ -1,6 +1,8 @@
-import { createElement } from "../../utilities/index.js";
+import { createElement } from "../../utilities/createElement.js";
 import { useDataStore } from "../../stores/DataStore.js";
-import { ArrowUpRight, GitHub } from "../icons/index.js";
+
+import ArrowUpRight from "../icons/heroicons/ArrowUpRight.js";
+import GitHub from "../icons/socials/GitHub.js";
 
 const { url } = useDataStore();
 

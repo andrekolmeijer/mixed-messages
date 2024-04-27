@@ -1,4 +1,4 @@
-import { loadFonts } from "../utilities/index.js";
+import { loadFonts } from "../utilities/loadFonts.js";
 import { useMediaQuery } from "../wrappers/index.js";
 
 const { md, lg, add } = useMediaQuery();

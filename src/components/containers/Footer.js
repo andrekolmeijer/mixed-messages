@@ -1,12 +1,10 @@
-import { createElement } from "../../utilities/index.js";
+import { createElement } from "../../utilities/createElement.js";
 import { useDataStore } from "../../stores/DataStore.js";
 
-import {
-  NodejsLight,
-  GitHub,
-  Twitter,
-  LinkedIn
-} from "../icons/index.js";
+import NodejsLight from "../icons/logos/NodejsLight.js";
+import GitHub from "../icons/socials/GitHub.js";
+import Twitter from "../icons/socials/Twitter.js";
+import LinkedIn from "../icons/socials/LinkedIn.js";
 
 const { author, provider, url } = useDataStore();
 

@@ -1,4 +1,5 @@
-import { ClipboardDocumentCheck, ClipboardDocument } from "../components/icons/index.js";
+import ClipboardDocumentCheck from "../components/icons/heroicons/ClipboardDocumentCheck.js";
+import ClipboardDocument from "../components/icons/heroicons/ClipboardDocument.js";
 
 async function copyToClipboard(value) {
   try {

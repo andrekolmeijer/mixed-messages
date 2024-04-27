@@ -1,8 +1,8 @@
-import { createElement } from "../../utilities/index.js";
+import { createElement } from "../../utilities/createElement.js";
 import { useDataStore } from "../../stores/DataStore.js";
 import { forecast } from "../../lib/forecast.js";
 
-import { RocketLaunch } from "../icons/index.js";
+import RocketLaunch from "../icons/heroicons/RocketLaunch.js";
 
 const { url } = useDataStore();
 

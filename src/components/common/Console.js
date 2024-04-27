@@ -1,8 +1,9 @@
-import { createElement } from "../../utilities/index.js";
-import { forecast } from "../../lib/forecast.js";
+import { createElement } from "../../utilities/createElement.js";
 import { useCopyToClipboard } from "../../wrappers/index.js";
+import { forecast } from "../../lib/forecast.js";
 
-import { CommandLine, ClipboardDocument } from "../icons/index.js";
+import CommandLine from "../icons/heroicons/CommandLine.js";
+import ClipboardDocument from "../icons/heroicons/ClipboardDocument.js";
 
 const copyToClipboard = useCopyToClipboard();
 

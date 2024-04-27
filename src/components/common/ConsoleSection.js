@@ -1,4 +1,4 @@
-import { createElement } from "../../utilities/index.js";
+import { createElement } from "../../utilities/createElement.js";
 import { useDataStore } from "../../stores/DataStore.js";
 
 import Console from "./Console.js";
