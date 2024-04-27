@@ -1,4 +1,3 @@
-import { setForecast } from "./utilities/index.js";
 import { applyStyles } from "./styles/applyStyles.js";
 
 import NavBar from "./components/containers/NavBar.js";
@@ -11,8 +10,7 @@ function formatDocument() {
   Main();
   Footer();
 
-  setForecast()
-  applyStyles()
+  applyStyles();
 }
 
 formatDocument()

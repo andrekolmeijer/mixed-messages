@@ -1,5 +1,7 @@
-import { createElement, formatForecast } from "../../utilities/index.js";
+import { createElement } from "../../utilities/index.js";
 import { useDataStore } from "../../stores/DataStore.js";
+import { forecast } from "../../lib/forecast.js";
+
 import { RocketLaunch } from "../icons/index.js";
 
 const { url } = useDataStore();
@@ -29,7 +31,7 @@ const PredictSection = () => {
   document.getElementById('div4').appendChild(small);
   document.getElementById('div4').appendChild(small2);
 
-  button.onclick = formatForecast;
+  button.onclick = forecast;
 };
 
 export default PredictSection;

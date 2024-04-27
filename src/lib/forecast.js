@@ -1,4 +1,6 @@
-export function createAsciiArt(condition) {
+import { createForecast, wrapText } from "../utilities/index.js";
+
+function createAsciiArt(condition) {
 
   /*
    '   __________  ______   _       __           __  __             '
@@ -27,4 +29,18 @@ export function createAsciiArt(condition) {
   const span = document.getElementById('output1');
   span.style.color = `${selectedColor}`;
   span.textContent = asciiArt;
+}
+
+export function forecast() {
+  const forecast = createForecast();
+  const wrappedForecast = wrapText(forecast, 85);
+
+  forecast.includes('clear')
+  ? createAsciiArt('clear')
+  : forecast.includes('showers')
+  ? createAsciiArt('showers')
+  : createAsciiArt()
+
+  const span = document.getElementById('output2');
+  span.textContent = wrappedForecast;
 }
