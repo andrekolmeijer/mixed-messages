@@ -1,8 +1,10 @@
-import { createElement } from "../../utilities/createElement.js";
-import { useDataStore } from "../../stores/DataStore.js";
+import { createElement } from "../../../utilities/createElement.js";
+import { useDataStore } from "../../../stores/DataStore.js";
 
-import ArrowUpRight from "../icons/heroicons/ArrowUpRight.js";
-import GitHub from "../icons/socials/GitHub.js";
+import ArrowUpRight from "../../icons/heroicons/ArrowUpRight.js";
+import GitHub from "../../icons/socials/GitHub.js";
+
+import styles from "./styles.js";
 
 const { url } = useDataStore();
 
@@ -34,6 +36,8 @@ const NavBar = () => {
   document.getElementById('div2').appendChild(ul2);
   document.getElementById('ul2').appendChild(li2);
   document.getElementById('li2').appendChild(a3);
+
+  styles();
 };
 
 export default NavBar;

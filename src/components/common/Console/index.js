@@ -1,9 +1,11 @@
-import { createElement } from "../../utilities/createElement.js";
-import { useCopyToClipboard } from "../../wrappers/index.js";
-import { forecast } from "../../lib/forecast.js";
+import { createElement } from "../../../utilities/createElement.js";
+import { useCopyToClipboard } from "../../../wrappers/index.js";
+import { forecast } from "../../../lib/forecast.js";
 
-import CommandLine from "../icons/heroicons/CommandLine.js";
-import ClipboardDocument from "../icons/heroicons/ClipboardDocument.js";
+import CommandLine from "../../icons/heroicons/CommandLine.js";
+import ClipboardDocument from "../../icons/heroicons/ClipboardDocument.js";
+
+import styles from "./styles.js";
 
 const copyToClipboard = useCopyToClipboard();
 
@@ -53,6 +55,7 @@ const Console = () => {
   button2.onclick = copyForecast;
 
   setForecast();
+  styles();
 };
 
 export default Console;

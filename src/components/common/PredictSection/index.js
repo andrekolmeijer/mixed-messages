@@ -1,8 +1,10 @@
-import { createElement } from "../../utilities/createElement.js";
-import { useDataStore } from "../../stores/DataStore.js";
-import { forecast } from "../../lib/forecast.js";
+import { createElement } from "../../../utilities/createElement.js";
+import { useDataStore } from "../../../stores/DataStore.js";
+import { forecast } from "../../../lib/forecast.js";
 
-import RocketLaunch from "../icons/heroicons/RocketLaunch.js";
+import RocketLaunch from "../../icons/heroicons/RocketLaunch.js";
+
+import styles from "./styles.js";
 
 const { url } = useDataStore();
 
@@ -32,6 +34,8 @@ const PredictSection = () => {
   document.getElementById('div4').appendChild(small2);
 
   button.onclick = forecast;
+
+  styles();
 };
 
 export default PredictSection;

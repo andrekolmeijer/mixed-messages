@@ -1,4 +1,4 @@
-import { md, lg } from "../lib/mediaQueries.js";
+import { md, lg } from "../lib/MediaQueries.js";
 
 const mediaQueryChangeSubscribe = (mq, handler) => {
   if (mq.addEventListener) {

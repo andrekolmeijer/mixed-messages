@@ -1,7 +1,9 @@
-import { createElement } from "../../utilities/createElement.js";
-import { useDataStore } from "../../stores/DataStore.js";
+import { createElement } from "../../../utilities/createElement.js";
+import { useDataStore } from "../../../stores/DataStore.js";
 
-import Console from "./Console.js";
+import Console from "../Console/index.js";
+
+import styles from "./styles.js";
 
 const { url } = useDataStore();
 
@@ -16,6 +18,8 @@ const ConsoleSection = () => {
   Console();
 
   document.getElementById('section-two').appendChild(paragraph2);
+
+  styles();
 };
 
 export default ConsoleSection;

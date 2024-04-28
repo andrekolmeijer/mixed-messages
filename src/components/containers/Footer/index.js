@@ -1,10 +1,12 @@
-import { createElement } from "../../utilities/createElement.js";
-import { useDataStore } from "../../stores/DataStore.js";
+import { createElement } from "../../../utilities/createElement.js";
+import { useDataStore } from "../../../stores/DataStore.js";
 
-import NodejsLight from "../icons/logos/NodejsLight.js";
-import GitHub from "../icons/socials/GitHub.js";
-import Twitter from "../icons/socials/Twitter.js";
-import LinkedIn from "../icons/socials/LinkedIn.js";
+import NodejsLight from "../../icons/logos/NodejsLight.js";
+import GitHub from "../../icons/socials/GitHub.js";
+import Twitter from "../../icons/socials/Twitter.js";
+import LinkedIn from "../../icons/socials/LinkedIn.js";
+
+import styles from "./styles.js";
 
 const { author, provider, url } = useDataStore();
 
@@ -42,6 +44,8 @@ const Footer = () => {
   document.getElementById('li5').appendChild(a7);
   document.getElementById('ul4').appendChild(li6);
   document.getElementById('li6').appendChild(a8);
+
+  styles();
 };
 
 export default Footer;

@@ -1,7 +1,9 @@
-import { createElement } from "../../utilities/createElement.js";
+import { createElement } from "../../../utilities/createElement.js";
 
-import ConsoleSection from "../common/ConsoleSection.js";
-import PredictSection from "../common/PredictSection.js";
+import ConsoleSection from "../../common/ConsoleSection/index.js";
+import PredictSection from "../../common/PredictSection/index.js";
+
+import styles from "./styles.js";
 
 const Main = () => {
   const container = createElement('div', 'id', 'container');
@@ -14,6 +16,8 @@ const Main = () => {
 
   PredictSection();
   ConsoleSection();
+
+  styles();
 };
 
 export default Main;
