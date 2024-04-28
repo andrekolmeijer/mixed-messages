@@ -1,5 +1,5 @@
 import { useMediaQuery } from "../../../wrappers/index.js";
-import { styleSheet } from "../../../lib/StyleSheets.js";
+import { base } from "../../../lib/StyleSheets.js";
 
 const { md, add } = useMediaQuery();
 
@@ -85,8 +85,8 @@ const styles = () => {
     }
   `;
 
-  styleSheet.insertRule(buttonBefore);
-  styleSheet.insertRule(buttonAfter);
+  base.insertRule(buttonBefore);
+  base.insertRule(buttonAfter);
 
   const svg = button.querySelector('svg');
   svg.style.width = '1.25rem';

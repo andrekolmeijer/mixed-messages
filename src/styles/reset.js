@@ -1,4 +1,4 @@
-import { cssReset } from "../lib/StyleSheets.js";
+import { reset } from "../lib/StyleSheets.js";
 
 const all = `
   *, :after, :before {
@@ -34,10 +34,10 @@ const list = `
   }
 `;
 
-cssReset.insertRule(all);
-cssReset.insertRule(media);
-cssReset.insertRule(strong);
-cssReset.insertRule(anchor);
-cssReset.insertRule(list);
+reset.insertRule(all);
+reset.insertRule(media);
+reset.insertRule(strong);
+reset.insertRule(anchor);
+reset.insertRule(list);
 
-document.adoptedStyleSheets = [cssReset];
+document.adoptedStyleSheets = [reset];

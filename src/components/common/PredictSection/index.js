@@ -1,6 +1,6 @@
 import { createElement } from "../../../utilities/createElement.js";
 import { useDataStore } from "../../../stores/DataStore.js";
-import { forecast } from "../../../lib/forecast.js";
+import { forecast } from "../../../lib/Forecast.js";
 
 import RocketLaunch from "../../icons/heroicons/RocketLaunch.js";
 

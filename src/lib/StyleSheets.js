@@ -1,2 +1,2 @@
-export const cssReset = new CSSStyleSheet();
-export const styleSheet = new CSSStyleSheet();
+export const reset = new CSSStyleSheet();
+export const base = new CSSStyleSheet();

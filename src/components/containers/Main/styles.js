@@ -1,5 +1,5 @@
 import { useMediaQuery } from "../../../wrappers/index.js";
-import { styleSheet } from "../../../lib/StyleSheets.js";
+import { base } from "../../../lib/StyleSheets.js";
 
 const { md, lg, add } = useMediaQuery();
 
@@ -37,7 +37,7 @@ const styles = () => {
     }
   `;
 
-  styleSheet.insertRule(backdropAfter);
+  base.insertRule(backdropAfter);
 
   const main = document.querySelector('main');
   main.style.display = 'flex';

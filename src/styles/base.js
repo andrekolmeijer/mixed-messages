@@ -1,4 +1,4 @@
-import { styleSheet } from "../lib/StyleSheets.js";
+import { base } from "../lib/StyleSheets.js";
 
 const htmlBody = `
   html, body {
@@ -7,7 +7,7 @@ const htmlBody = `
   }
 `;
 
-styleSheet.insertRule(htmlBody);
+base.insertRule(htmlBody);
 
 const html = document.querySelector('html');
 html.style.colorScheme = 'dark';
@@ -61,9 +61,9 @@ const button2FocusHover = `
   }
 `;
 
-styleSheet.insertRule(aHover);
-styleSheet.insertRule(aHover2);
-styleSheet.insertRule(buttonFocusHover);
-styleSheet.insertRule(button2FocusHover);
+base.insertRule(aHover);
+base.insertRule(aHover2);
+base.insertRule(buttonFocusHover);
+base.insertRule(button2FocusHover);
 
-document.adoptedStyleSheets = [...document.adoptedStyleSheets, styleSheet];
+document.adoptedStyleSheets = [...document.adoptedStyleSheets, base];

@@ -1,4 +1,4 @@
-export async function loadFonts() {
+async function load() {
   const plexMonoRegular = new FontFace('IBM Plex Mono', 'url(src/assets/fonts/IBMPlexMono-Regular.woff2) format(woff2)', {
     weight: 400,
     style: 'normal',
@@ -23,3 +23,5 @@ export async function loadFonts() {
   document.fonts.add(plexMonoSemiBold);
   document.fonts.add(openSansVariable);
 }
+
+load();
