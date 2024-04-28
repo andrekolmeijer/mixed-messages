@@ -60,8 +60,6 @@ const styles = () => {
       if (lg.matches) {
         container.style.paddingLeft = '7rem';
         container.style.paddingRight = '7rem';
-
-        // main.style.gap = '7rem';
       }
     } else {
       container.style.paddingLeft = '1rem';

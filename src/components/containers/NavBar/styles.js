@@ -22,7 +22,7 @@ const styles = () => {
   div.style.flexShrink = '0';
   div.style.fontFamily = 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
 
-  const a = document.getElementById('div').querySelector('a');
+  const a = div.querySelector('a');
   a.style.flex = '1 1 0%';
   a.style.fontFamily = 'IBM Plex Mono';
   a.style.fontWeight = '600';
@@ -30,7 +30,7 @@ const styles = () => {
   a.style.fontSize = '1.125rem';
   a.style.lineHeight = '1.75rem';
 
-  const span = document.getElementById('div').querySelector('span');
+  const span = div.querySelector('span');
   span.style.color = '#84BA64'; // #84BA64 / #638B4B
 
   const div2 = document.getElementById('div2');
@@ -45,14 +45,14 @@ const styles = () => {
   ul.style.flex = '1 1 0%';
   ul.style.flexDirection = 'row';
 
-  const lis = document.querySelector('ul').querySelectorAll('li');
+  const lis = ul.querySelectorAll('li');
   lis.forEach(li => {
     li.style.display = 'none'; // flex
     li.style.alignItems = 'center';
     li.style.marginTop = '3px';
   })
 
-  const as = document.querySelector('ul').querySelectorAll('a');
+  const as = ul.querySelectorAll('a');
   as.forEach(a => {
     a.style.display = 'inline-flex';
     a.style.alignItems = 'center';
@@ -61,15 +61,14 @@ const styles = () => {
     a.style.padding = '.5rem .75rem';
   });
 
-  const spans = document.querySelector('ul').querySelectorAll('span');
+  const spans = ul.querySelectorAll('span');
   spans.forEach(span => {
     span.style.fontSize = '.875rem';
-    // span.style.fontWeight = '500';
     span.style.lineHeight = '1.25rem';
     span.style.color = '#fff';
   });
 
-  const svgs = document.querySelector('ul').querySelectorAll('svg');
+  const svgs = ul.querySelectorAll('svg');
   svgs.forEach(svg => {
     svg.style.width = '.75rem';
     svg.style.height = '.75rem';
@@ -81,13 +80,13 @@ const styles = () => {
   ul2.style.alignItems = 'center';
   ul2.style.gap = '.5rem';
 
-  const lis2 = document.getElementById('ul2').querySelectorAll('li');
+  const lis2 = ul2.querySelectorAll('li');
   lis2.forEach(li => {
     li.style.display = 'flex';
     li.style.alignItems = 'center';
   })
 
-  const as2 = document.getElementById('ul2').querySelectorAll('a');
+  const as2 = ul2.querySelectorAll('a');
   as2.forEach(a => {
     a.style.width = '2.25rem';
     a.style.height = '2.25rem';
@@ -95,7 +94,7 @@ const styles = () => {
     a.style.padding = '.5rem';
   });
 
-  const svgs2 = document.getElementById('ul2').querySelectorAll('svg');
+  const svgs2 = ul2.querySelectorAll('svg');
   svgs2.forEach(svg => {
     svg.style.width = '20px';
     svg.style.height = '20px';

@@ -88,7 +88,7 @@ const styles = () => {
   styleSheet.insertRule(buttonBefore);
   styleSheet.insertRule(buttonAfter);
 
-  const svg = document.getElementById('button').querySelector('svg');
+  const svg = button.querySelector('svg');
   svg.style.width = '1.25rem';
   svg.style.height = '1.25rem';
   svg.style.opacity = '.5';

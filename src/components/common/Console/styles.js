@@ -22,7 +22,7 @@ const styles = () => {
   console1.style.flexGrow = '0';
   console1.style.display = 'flex';
 
-  const span3 = document.getElementById('console1').querySelector('span');
+  const span3 = console1.querySelector('span');
   span3.style.display = 'inline-flex';
   span3.style.alignItems = 'center';
   span3.style.gap = '.5rem';
@@ -31,7 +31,7 @@ const styles = () => {
   span3.style.fontWeight = '600';
   span3.style.color = '#e9edf0';
 
-  const svg2 = document.getElementById('console1').querySelector('svg');
+  const svg2 = console1.querySelector('svg');
   svg2.style.width = '1.25rem';
   svg2.style.height = '1.25rem';
   svg2.style.color = '#84ba64'; // #84ba64 / #ae5f00
@@ -59,7 +59,7 @@ const styles = () => {
   code.style.overflowX = 'auto';
   code.style.flexGrow = '1';
 
-  const spans2 = document.querySelector('code').querySelectorAll('span');
+  const spans2 = code.querySelectorAll('span');
   spans2[1].style.color = '#ECEFF4'; // rgb(203 212 217 / 1) / #D8DEE9
   spans2[1].style.lineHeight = '1.375rem';
 
@@ -71,7 +71,6 @@ const styles = () => {
   div6.style.padding = '.75rem 1rem';
   div6.style.fontSize = '.875rem';
   div6.style.lineHeight = '1.25rem';
-  // div6.style.fontWeight = '500';
 
   const button2 = document.getElementById('button2');
   button2.style.webkitUserSelect = 'none';
@@ -88,7 +87,7 @@ const styles = () => {
   button2.style.backgroundColor = '#2c3437';
   button2.style.color = '#E9EDF0';
 
-  const svg3 = document.getElementById('button2').querySelector('svg');
+  const svg3 = button2.querySelector('svg');
   svg3.style.width = '1.25rem';
   svg3.style.height = '1.25rem';
 

@@ -12,7 +12,7 @@ const styles = () => {
   section2.style.justifyContent = 'center';
   section2.style.gap = '1rem';
 
-  const paragraph2 = document.getElementById('section-two').querySelector('p');
+  const paragraph2 = section2.querySelector('p');
   paragraph2.style.textAlign = 'center';
   paragraph2.style.fontSize = '.875rem';
   paragraph2.style.lineHeight = '1.25rem';
