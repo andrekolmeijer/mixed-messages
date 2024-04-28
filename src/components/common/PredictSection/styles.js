@@ -104,6 +104,9 @@ const styles = () => {
   const span2 = document.querySelector('small').querySelector('span');
   span2.style.fontWeight = '700';
 
+  const a = document.getElementById('small2').querySelector('a');
+  a.style.fontWeight = '500';
+
   function handler() {
     if (md.matches) {
       heading.style.fontSize = '3rem';

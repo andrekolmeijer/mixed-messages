@@ -18,6 +18,9 @@ const styles = () => {
   paragraph2.style.lineHeight = '1.25rem';
   paragraph2.style.color = '#E9EDF0';
 
+  const a = paragraph2.querySelector('a');
+  a.style.fontWeight = '500';
+
   function handler() {
     if (md.matches) {
       section2.style.maxWidth = '42rem';

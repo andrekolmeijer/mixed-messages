@@ -47,11 +47,6 @@ const styles = () => {
   main.style.justifyContent = 'center';
   main.style.gap = '2rem';
 
-  const as3 = document.querySelector('main').querySelectorAll('a');
-  as3.forEach(a => {
-    a.style.fontWeight = '600';
-  });
-
   function handler() {
     if (md.matches) {
       container.style.paddingLeft = '3.5rem';
